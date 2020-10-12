@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background: linear-gradient(45deg, blue, blue);
+    /* background: -webkit-linear-gradient(to left, rgba(0, 0, 255, 0.5), #8000ffbe); */    
 }
 .container{
     position: absolute;
@@ -55,7 +55,7 @@ body{
 }
 .myRightCtn header{
     color: #fff;
-    font-size: 44px;
+    font-size: 34px;
 }
 .box{
     position: relative;
@@ -114,4 +114,33 @@ body{
 }
 .button:focus{
     outline: none;
+}
+img{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 18px;
+    width: 150px;
+    border-radius: 50%;
+    animation: mover 1s infinite alternate;
+}
+
+@keyframes mover{
+    0%{transform: translateY(0);}
+    100%{transform: translateY(-20px);}
+}
+
+input[type='button']{
+    margin-top: 30px;
+    /* background-color: red; */
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+.myRightCtn h3, h4{
+    color: white;
+    text-align: center;
+}
+.myRightCtn h4{
+    box-shadow: 2px 2px black;
+    margin-bottom: 20px;
 }
