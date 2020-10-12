@@ -5,6 +5,10 @@
 }
 body{
     /* background: -webkit-linear-gradient(to left, rgba(0, 0, 255, 0.5), #8000ffbe); */    
+
+        height: 100vh;
+        background: linear-gradient(#10416b, black); 
+      
 }
 .container{
     position: absolute;
@@ -139,6 +143,9 @@ input[type='button']{
 .myRightCtn h3, h4{
     color: white;
     text-align: center;
+}
+.myRightCtn h3{
+    text-shadow: 1px 2px black;
 }
 .myRightCtn h4{
     box-shadow: 2px 2px black;
