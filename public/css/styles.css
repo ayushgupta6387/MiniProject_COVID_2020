@@ -27,3 +27,17 @@ body{
     justify-content: center;
     align-items: center;
 }
+.myLeftCtn{
+    position: relative;
+    background: #fff;
+    border-radius: 25px;
+    height: 100%;
+    padding: 25px;
+    padding-left: 50px;
+}
+.myLeftCtn header{
+    color: blueviolet;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
