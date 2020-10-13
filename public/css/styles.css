@@ -5,7 +5,8 @@
 }
 
 /* Sign up and Register Page */
-.signup, .signin {
+.signup,
+.signin {
   /* background: -webkit-linear-gradient(to left, rgba(0, 0, 255, 0.5), #8000ffbe); */
   height: 100vh;
   background: linear-gradient(to left, #009ffd, #2a2a72);
@@ -195,37 +196,40 @@ h4 {
 }
 
 
+
+
+
 /* Home Page */
 .active {
   text-align: center;
 }
-.caro{
-    height: 550px;
+.caro {
+  height: 550px;
 }
 
 /* navigation */
-#navigation .navbar{
-    padding: 1.1rem;
+#navigation .navbar {
+  padding: 1.1rem;
 }
-.nav-link{
-    /* padding: 0rem; */
-    font-size: 1.1em !important;
-  }
-  
-  #navigation .navbar-nav li{
-      padding: 0 1px;
-    padding-right: 20px;
-  }
-  
-    #navigation h2:hover{
-      color: red;
-    }
-  /* Two column */
-#two-column{
-    background-color: wheat;
+.nav-link {
+  /* padding: 0rem; */
+  font-size: 1.1em !important;
 }
-.twoColumnImg{
-    background-color: wheat;
-      height: 380px;
-      width: 500px;
-  }
+
+#navigation .navbar-nav li {
+  /* padding: 0 1px; */
+  padding-right: 20px;
+}
+
+#navigation h2:hover {
+  color: red;
+}
+/* Two column */
+#two-column {
+  background-color: wheat;
+}
+.twoColumnImg {
+  background-color: wheat;
+  height: 380px;
+  width: 500px;
+}
