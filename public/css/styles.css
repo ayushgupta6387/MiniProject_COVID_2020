@@ -223,4 +223,9 @@ h4 {
   /* Two column */
 #two-column{
     background-color: wheat;
+}
+.twoColumnImg{
+    background-color: wheat;
+      height: 380px;
+      width: 500px;
   }
