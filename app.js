@@ -8,9 +8,12 @@ app.get("/", (req, res)=>{
 res.render("signup");
 });
 
-
 app.get("/sign", (req, res) => {
     res.render("signin");
+});
+
+app.get("/home", (req, res) => {
+    res.render("home");
 });
 
 let port = process.env.PORT;
