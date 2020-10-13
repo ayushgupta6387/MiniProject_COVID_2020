@@ -10,9 +10,14 @@ body {
   background: linear-gradient(to left, #009ffd, #2A2A72);
 }
 
+header {
+  text-align: center;
+}
+
 .container {
   position: absolute;
   max-width: 800px;
+
   height: 510px;
   margin: auto;
   top: 50%;
@@ -85,6 +90,9 @@ body {
   box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, .7);
 }
 
+.log {
+  margin-top: 10px;
+}
 .myLeftCtn .myInput:focus {
   outline: none;
 }
@@ -136,13 +144,15 @@ body {
   outline: none;
 }
 
+
 img {
   margin-top: 50px;
-  margin-left: 50px;
+  margin-left: 60px;
   margin-bottom: 18px;
-  width: 150px;
-  border-radius: 50%;
-  animation: mover 1s infinite alternate;
+  width: 90px;
+  border-radius: 80%;
+  background-color: inherit;
+  animation: mover 700ms infinite alternate;
 }
 
 @keyframes mover {
@@ -153,6 +163,12 @@ img {
   100% {
     transform: translateY(-20px);
   }
+}
+
+.forgot-password {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 input[type='button'] {
@@ -173,6 +189,6 @@ input[type='button'] {
 }
 
 .myRightCtn h4 {
-  box-shadow: 2px 2px black;
+  box-shadow: 2px 2px;
   margin-bottom: 20px;
 }
