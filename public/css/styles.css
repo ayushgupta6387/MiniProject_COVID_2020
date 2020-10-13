@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* Sign up and Register Page */
 .signup, .signin {
   /* background: -webkit-linear-gradient(to left, rgba(0, 0, 255, 0.5), #8000ffbe); */
   height: 100vh;
