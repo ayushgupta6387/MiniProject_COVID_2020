@@ -198,5 +198,30 @@ h4 {
 /* Home Page */
 .active {
   text-align: center;
-  
 }
+img{
+    height: 550px;
+}
+
+/* navigation */
+#navigation .navbar{
+    padding: 1.1rem;
+}
+.nav-link{
+    /* padding: 0rem; */
+    font-size: 1.1em !important;
+  }
+  
+  #navigation .navbar-nav li{
+      padding: 0 1px;
+    padding-right: 20px;
+  }
+  
+    #navigation h2:hover{
+      color: red;
+    }
+  /* .logo{
+      background-color: red;
+      height: 30px;
+      width: 20%;
+  } */
