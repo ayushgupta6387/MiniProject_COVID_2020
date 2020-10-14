@@ -203,6 +203,9 @@ h4 {
 .active {
   text-align: center;
 }
+.carousel{
+  background: -webkit-linear-gradient(360deg,#949494 10%,#efefef 360%);
+}
 .caro {
   height: 550px;
 }
