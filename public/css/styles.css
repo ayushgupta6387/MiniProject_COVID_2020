@@ -253,3 +253,8 @@ margin: 10px;
 #detailed .card-text{
   color: white;
 }
+
+/* suggestion */
+#suggestionForm{
+  background-color: #3aafa9;
+}
