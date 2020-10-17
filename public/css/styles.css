@@ -217,7 +217,9 @@ h4 {
 .caro {
   height: 550px;
 }
-
+.carousel{
+  margin-top: 10px;
+}
 /* navigation */
 #navigation .navbar {
   padding: 1.1rem;

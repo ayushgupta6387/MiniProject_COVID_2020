@@ -1,48 +1,65 @@
 <%- include("header") -%>
 <body class="signup">
-<!-- Main container -->
-<div class="container">
-  <div class="myCard">
-    <div class="row">
-
-      <!-- left Part -->
-      <div class="col-md-6 full">
-        <div class="myLeftCtn">
-          <form class="myForm text-center">
-            <header>Create new Account</header>
-            <div class="form-group">
-              <i class="fa fa-user"></i>
-              <input type="text" class="myInput" placeholder="Username" id="username" required>
-            </div>
-            <div class="form-group">
-              <i class="fa fa-envelope"></i>
-              <input type="email" class="myInput" placeholder="Email" id="userId" required>
-            </div>
-            <div class="form-group">
-              <i class="fa fa-lock"></i>
-              <input type="password" class="myInput" placeholder="Password" id="username" required>
-            </div>
-            <input type="submit" class="button" value="CREATE ACCOUNT">
-            <p class="log">Already have an account? <a href="#">SignIn</a></p>
-          </form>
+  <!-- Main container -->
+  <div class="container">
+    <div class="myCard">
+      <div class="row">
+        <!-- left Part -->
+        <div class="col-md-6 full">
+          <div class="myLeftCtn">
+            <form class="myForm text-center">
+              <header>Create new Account</header>
+              <div class="form-group">
+                <i class="fa fa-user"></i>
+                <input
+                  type="text"
+                  class="myInput"
+                  placeholder="Username"
+                  id="username"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <i class="fa fa-envelope"></i>
+                <input
+                  type="email"
+                  class="myInput"
+                  placeholder="Email"
+                  id="userId"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <i class="fa fa-lock"></i>
+                <input
+                  type="password"
+                  class="myInput"
+                  placeholder="Password"
+                  id="username"
+                  required
+                />
+              </div>
+              <input type="submit" class="button" value="CREATE ACCOUNT" />
+              <p class="log">Already have an account? <a href="#">SignIn</a></p>
+            </form>
+          </div>
         </div>
-      </div>
 
-      <!-- Right Part -->
-      <div class="right col-md-6 full">
-        <div class="myRightCtn">
-          <div class="box">
-            <header>COVID-19</header>
-            <img class="signimg" src="images/circle-cropped.png" alt="">
-            <h3>Join US</h3>
-            <h4>Health and Wellness</h4>
-            <input type="button" class="button" value="About Us">
+        <!-- Right Part -->
+        <div class="right col-md-6 full">
+          <div class="myRightCtn">
+            <div class="box">
+              <header>COVID-19</header>
+              <img class="signimg" src="images/circle-cropped.png" alt="" />
+              <h3>Join US</h3>
+              <h4>Health and Wellness</h4>
+              <input type="button" class="button" value="About Us" />
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-
-<%- include("footer") -%>
+  <%- include("footer") -%>
+</body>
