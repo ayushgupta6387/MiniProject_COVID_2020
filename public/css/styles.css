@@ -16,11 +16,9 @@
 header {
   text-align: center;
 }
-footer{
-  position: absolute;
-  /* margin-top: -2000px; */
-
-}
+/* footer{
+  margin-top: 550px;
+} */
 
 .container {
   position: absolute;
@@ -449,8 +447,8 @@ hr {
   margin-top: 0.8rem;
   margin-bottom: 1rem;
 }
-
-@media (max-width: 1762px){
+/* 
+@media (max-width: 1275px){
   footer{
     margin-top: 800px;
   }
@@ -459,7 +457,9 @@ hr {
   footer{
     margin-top: 1200px;
   }
-}
+} */
+
+/* FOR RESPONSIVE OF FOOTER */
 @media (max-width: 860px) {
   .section-1 {
     flex-wrap: wrap;
@@ -492,4 +492,10 @@ hr {
   .section-2 p {
     font-size: 30px;
   }
+}
+
+
+/* COVID LIVE */
+table{
+  margin-top: 20px;
 }
