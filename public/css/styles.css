@@ -235,6 +235,11 @@ h4 {
 #navigation h2:hover {
   color: red;
 }
+#navigation img{
+  width: 70px;
+  border-radius: 50%;
+}
+
 /* Two column */
 #two-column {
   background-color: wheat;
