@@ -262,7 +262,6 @@ margin: 10px;
 /* footer */
 footer {
   background-color: #3f3f3f;
-
 }
 .section-1 {
   color: white;
@@ -274,7 +273,6 @@ footer {
 .first span {
   color: red;
 }
-
 .about {
   width: 40%;
   text-align: justify;
@@ -286,7 +284,6 @@ footer {
 }
 .about h2 {
   text-transform: uppercase;
-  /* color: white; */
   font-size: 20px;
   color: rgba(255, 166, 0, 0.849);
 }
