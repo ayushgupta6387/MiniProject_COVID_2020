@@ -12,8 +12,14 @@
   background: linear-gradient(to left, #009ffd, #2a2a72);
 }
 
+
 header {
   text-align: center;
+}
+footer{
+  position: absolute;
+  /* margin-top: -2000px; */
+
 }
 
 .container {
@@ -22,6 +28,7 @@ header {
 
   height: 510px;
   margin: auto;
+  margin-top: 50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -102,6 +109,9 @@ header {
 .myForm {
   position: relative;
   margin-top: 50px;
+}
+.full{
+  /* padding-top: 500px; */
 }
 
 .myLeftCtn .button {
@@ -215,12 +225,10 @@ h4 {
   padding: 1.1rem;
 }
 .nav-link {
-  /* padding: 0rem; */
   font-size: 1.1em !important;
 }
 
 #navigation .navbar-nav li {
-  /* padding: 0 1px; */
   padding-right: 20px;
 }
 
@@ -442,6 +450,16 @@ hr {
   margin-bottom: 1rem;
 }
 
+@media (max-width: 1762px){
+  footer{
+    margin-top: 800px;
+  }
+}
+@media (max-width: 767px){
+  footer{
+    margin-top: 1200px;
+  }
+}
 @media (max-width: 860px) {
   .section-1 {
     flex-wrap: wrap;

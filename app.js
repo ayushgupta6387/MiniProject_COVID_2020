@@ -16,6 +16,9 @@ app.get("/sign", (req, res) => {
 app.get("/home", (req, res) => {
     res.render("home");
 });
+app.get("/covidLive", (req, res) => {
+    res.render("covidLive");
+});
 
 let port = process.env.PORT;
 if (port == null || port == "") {
