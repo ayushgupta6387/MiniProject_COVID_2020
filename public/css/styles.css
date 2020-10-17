@@ -248,6 +248,7 @@ h4 {
 }
 #detailed .card{
 background-color: #039be5;
+margin: 10px;
 }
 #detailed .card-text{
   color: white;
