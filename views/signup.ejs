@@ -22,19 +22,19 @@
         <!-- left Part -->
         <div class="col-md-6 full">
           <div class="myLeftCtn">
-            <form class="myForm text-center">
+            <form class="myForm text-center" action="/signup" method="POST">
               <header>Create new Account</header>
               <div class="form-group">
                 <i class="fa fa-user"></i>
-                <input type="text" class="myInput" placeholder="Username" id="username" required />
+                <input type="text" class="myInput" placeholder="Username" id="username" name="username" required />
               </div>
               <div class="form-group">
                 <i class="fa fa-envelope"></i>
-                <input type="email" class="myInput" placeholder="Email" id="userId" required />
+                <input type="email" class="myInput" placeholder="Email" id="userId" name="useremail" required />
               </div>
               <div class="form-group">
                 <i class="fa fa-lock"></i>
-                <input type="password" class="myInput" placeholder="Password" id="username" required />
+                <input type="password" class="myInput" placeholder="Password" name="p1" id="userpassword" required />
               </div>
               <input type="submit" class="button" value="CREATE ACCOUNT" />
               <p class="log">Already have an account? <a href="#">SignIn</a></p>
