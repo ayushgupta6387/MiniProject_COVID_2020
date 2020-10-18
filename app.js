@@ -37,7 +37,15 @@ app.post("/signup", (req, res)=>{
 });
 
 
-
+// post method for signin page
+app.post("/signin", (req, res)=>{
+  var email = req.body.useremail;
+  var password = req.body.userpassword;
+  // getting only on server
+  console.log(req.body);
+  // getting on page also users data
+  res.send("email is: "+email+"password is: "+password );
+});
 
 app.get("/covidlive", (req, res) => {
       const url = "https://api.covid19india.org/data.json";
