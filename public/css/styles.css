@@ -12,18 +12,16 @@
   background: linear-gradient(to left, #009ffd, #2a2a72);
 }
 
-
 header {
   text-align: center;
 }
+
 /* footer{
   margin-top: 550px;
 } */
-
 .container {
   position: absolute;
   max-width: 800px;
-
   height: 510px;
   margin: auto;
   margin-top: 50px;
@@ -100,6 +98,7 @@ header {
 .log {
   margin-top: 10px;
 }
+
 .myLeftCtn .myInput:focus {
   outline: none;
 }
@@ -108,7 +107,8 @@ header {
   position: relative;
   margin-top: 50px;
 }
-.full{
+
+.full {
   /* padding-top: 500px; */
 }
 
@@ -203,27 +203,28 @@ h4 {
   margin-bottom: 20px;
 }
 
-
-
-
-
 /* Home Page */
 .active {
   text-align: center;
 }
-.carousel{
-  background: -webkit-linear-gradient(360deg,#949494 10%,#efefef 360%);
+
+.carousel {
+  background: -webkit-linear-gradient(360deg, #949494 10%, #efefef 360%);
 }
+
 .caro {
   height: 550px;
 }
-.carousel{
+
+.carousel {
   margin-top: 10px;
 }
+
 /* navigation */
 #navigation .navbar {
   padding: 1.1rem;
 }
+
 .nav-link {
   font-size: 1.1em !important;
 }
@@ -235,7 +236,8 @@ h4 {
 #navigation h2:hover {
   color: red;
 }
-#navigation img{
+
+#navigation img {
   width: 70px;
   border-radius: 50%;
 }
@@ -244,6 +246,7 @@ h4 {
 #two-column {
   background-color: wheat;
 }
+
 .twoColumnImg {
   background-color: wheat;
   height: 380px;
@@ -251,28 +254,31 @@ h4 {
 }
 
 /* team */
-.teamdoctor{
+.teamdoctor {
   height: 300px;
 }
 
 /* detailed */
-#detailed{
+#detailed {
   background-color: burlywood;
 }
-#detailed .card{
-background-color: #039be5;
-margin: 10px;
+
+#detailed .card {
+  background-color: #039be5;
+  margin: 10px;
 }
-#detailed .card-text{
+
+#detailed .card-text {
   color: white;
 }
 
 /* suggestion */
-#suggestionForm{
+#suggestionForm {
   background-color: #3aafa9;
 }
-#suggestionForm .submitText{
-  padding-bottom: 10px ;
+
+#suggestionForm .submitText {
+  padding-bottom: 10px;
 }
 
 /* main section */
@@ -287,7 +293,6 @@ margin: 10px;
 footer {
   background: #26272b;
 }
-
 
 /* Section 1 */
 .section-1 {
@@ -359,7 +364,6 @@ i {
   padding: 2%;
 }
 
-
 /* Section 2 */
 .section-2 h2 {
   color: gray;
@@ -378,7 +382,6 @@ i {
 .section-2 a:hover {
   background-color: blue;
 }
-
 
 /* Section -3  */
 .section-3 {
@@ -423,7 +426,6 @@ i {
 .section-3 ul li:nth-child(5):hover {
   background-color: #ea4c89;
 }
-
 
 /* Section 4 */
 .section-4 {
@@ -808,6 +810,6 @@ hr {
 }
 
 /* COVID LIVE */
-table{
+table {
   margin-top: 20px;
 }
