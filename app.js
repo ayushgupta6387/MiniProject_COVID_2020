@@ -41,26 +41,26 @@ app.get("/covidlive", (req, res) => {
           body = JSON.parse(body);
           // The data have lot of extra properties
           // We will filter it
-          let data = [];
-          for (let i = 0; i < body.statewise.length; i++) {
-            data.push({
-              "State": body.statewise[i].state,
-
-              "Confirmed": body.statewise[i].confirmed,
-
-              "Active": body.statewise[i].active,
-
-              "Recovered": body.statewise[i].recovered,
-
-              "Death": body.statewise[i].deaths
-            });
-          }
-
-          console.log("-----Total Cases in India " +
-            "and in each state-----");
-            console.log(data);
-          // Format to table
-          console.table(data);
+          // let data = [];
+          // for (let i = 0; i < body.statewise.length; i++) {
+          //   data.push({
+          //     "State": body.statewise[i].state,
+          //
+          //     "Confirmed": body.statewise[i].confirmed,
+          //
+          //     "Active": body.statewise[i].active,
+          //
+          //     "Recovered": body.statewise[i].recovered,
+          //
+          //     "Death": body.statewise[i].deaths
+          //   });
+          // }
+          //
+          // console.log("-----Total Cases in India " +
+          //   "and in each state-----");
+          //   console.log(data);
+          // // Format to table
+          // console.table(data);
           res.render("covidLive", { state: body.statewise});
         }
       })
