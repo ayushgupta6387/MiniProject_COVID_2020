@@ -10,7 +10,7 @@
   </div>
   <thead>
     <tr>
-      <th scope="col">Country Name</th>
+      <th scope="col">State Name</th>
       <th scope="col">Active</th>
       <th scope="col">Recovered</th>
       <th scope="col">Deceased</th>
@@ -18,61 +18,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">#</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
 
+    <%  for (let i = 0; i < state.length; i++) { %>
     <tr>
-      <th scope="row">#</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <td><%= state[i].state %></td>
+      <td><%= state[i].confirmed %></td>
+      <td><%= state[i].active %></td>
+      <td><%= state[i].recovered %></td>
+      <td><%= state[i].deaths %></td>
     </tr>
+    <%  } %>
 
-    <tr>
-      <th scope="row">#</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-
-    <tr>
-      <th scope="row">#</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-
-    <tr>
-      <th scope="row">#</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-
-    <tr>
-      <th scope="row">#</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-
-    <tr>
-      <th scope="row">#</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
   </tbody>
 </table>
 
