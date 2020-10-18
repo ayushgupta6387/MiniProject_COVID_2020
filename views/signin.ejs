@@ -22,19 +22,19 @@
         <!-- Left Part -->
         <div class="col-md-6">
           <div class="myLeftCtn">
-            <form class="myForm text-center" action="/home" method="post">
+            <form class="myForm text-center" action="/signin" method="post">
               <header>SignIn/LogIn</header>
 
               <!-- For email address input -->
               <div class="form-group">
                 <i class="fa fa-envelope"></i>
-                <input type="email" class="myInput" placeholder="Email" id="userId" required />
+                <input type="email" class="myInput" placeholder="Email" id="userId" name="useremail" required />
               </div>
 
               <!-- For password Input -->
               <div class="form-group">
                 <i class="fa fa-lock"></i>
-                <input type="password" class="myInput" placeholder="Password" id="username" required />
+                <input type="password" class="myInput" placeholder="Password" name="userpassword" id="username" required />
               </div>
 
               <a class="forgot-password" href="#">Forgot Password?</a>

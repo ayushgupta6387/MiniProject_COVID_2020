@@ -24,6 +24,8 @@ app.get("/register", (req, res) => {
   res.render("signup");
 });
 
+
+// post method for signup page
 app.post("/signup", (req, res)=>{
   var name = req.body.username;
   var email = req.body.useremail;
@@ -33,6 +35,9 @@ app.post("/signup", (req, res)=>{
   // getting on page also users data
   res.send("Finally: name is: "+name+"email is: "+email+"password is: "+password );
 });
+
+
+
 
 app.get("/covidlive", (req, res) => {
       const url = "https://api.covid19india.org/data.json";
