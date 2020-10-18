@@ -21,8 +21,8 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/covidlive", (req, res) => {
-  const url = "https://api.covid19india.org/data.json";
-    request(url, (error, response, body) => {
+      const url = "https://api.covid19india.org/data.json";
+      request(url, (error, response, body) => {
 
         // Error - Any possible error when
         // request is made.
@@ -36,42 +36,43 @@ app.get("/covidlive", (req, res) => {
         // 200 - successful response
         if (!error && response.statusCode == 200) {
 
-            // The response data will be in string
-            // Convert it to Object.
-            body = JSON.parse(body);
-            // The data have lot of extra properties
-            // We will filter it
-            var data = [];
-            for (let i = 0; i < body.statewise.length; i++) {
-                data.push({
-                    "State": body.statewise[i].state,
+          // The response data will be in string
+          // Convert it to Object.
+          body = JSON.parse(body);
+          // The data have lot of extra properties
+          // We will filter it
+          let data = [];
+          for (let i = 0; i < body.statewise.length; i++) {
+            data.push({
+              "State": body.statewise[i].state,
 
-                    "Confirmed": body.statewise[i].confirmed,
+              "Confirmed": body.statewise[i].confirmed,
 
-                    "Active": body.statewise[i].active,
+              "Active": body.statewise[i].active,
 
-                    "Recovered": body.statewise[i].recovered,
+              "Recovered": body.statewise[i].recovered,
 
-                    "Death": body.statewise[i].deaths
-                });
-            }
+              "Death": body.statewise[i].deaths
+            });
+          }
 
-            console.log("-----Total Cases in India "
-                + "and in each state-----");
-
-            // Format to table
-            console.table(data);
+          console.log("-----Total Cases in India " +
+            "and in each state-----");
+            console.log(data);
+          // Format to table
+          console.table(data);
+          res.render("covidLive", { state: body.statewise});
         }
-    })
-  res.render("covidLive");
-});
+      })
+
+      });
 
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
+    let port = process.env.PORT;
+    if (port == null || port == "") {
+      port = 3000;
+    }
 
-app.listen(port, function() {
-  console.log("Server has started successfully");
-});
+    app.listen(port, function() {
+      console.log("Server has started successfully");
+    });
