@@ -1,30 +1,36 @@
 const express = require("express");
 
+// const expressLayouts = require('express-ejs-layouts');
+
 const request = require("request");
 
 const app = express();
 
+
 const bodyParser = require("body-parser");
+const { Router } = require("express");
 
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+// app.use(expressLayouts);
 app.set('view engine', 'ejs');
-app.use(express.static("public"));
+// app.use(express.static("public"));  
+app.use(express.static(__dirname + '/public'));
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
+// app.get("/", (req, res) => {
+//   res.render("home");
+// });
 
 
-app.get("/sign", (req, res) => {
-  res.render("signin");
-});
+// app.get("/sign", (req, res) => {
+//   res.render("signin");
+// });
 
-app.get("/register", (req, res) => {
-  res.render("signup");
-});
+// app.get("/register", (req, res) => {
+//   res.render("signup");
+// });
 
 
 // post method for signup page
@@ -54,24 +60,8 @@ app.post("/signin", (req, res) => {
 app.get("/covidlive", (req, res) => {
   const url = "https://api.covid19india.org/data.json";
   request(url, (error, response, body) => {
-
-    // Error - Any possible error when
-    // request is made.
-
-    // Eesponse - HTTP response status codes
-    // indicate whether a specific HTTP
-    // request has been successfully completed
-
-    // body - response data
-
-    // 200 - successful response
     if (!error && response.statusCode == 200) {
-
-      // The response data will be in string
-      // Convert it to Object.
       body = JSON.parse(body);
-      //The data have lot of extra properties
-      // We will filter it
       let data = [];
       for (let i = 0; i < body.statewise.length; i++) {
         data.push({
@@ -99,6 +89,10 @@ app.get("/covidlive", (req, res) => {
   })
 
 });
+
+// using routes
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 
 
 let port = process.env.PORT;

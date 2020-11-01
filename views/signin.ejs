@@ -2,17 +2,19 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
+  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
   <title>Covid-19</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
+
 
 <body class="signin">
   <!-- Main container -->
@@ -22,7 +24,7 @@
         <!-- Left Part -->
         <div class="col-md-6">
           <div class="myLeftCtn">
-            <form class="myForm text-center" action="/signin" method="post">
+            <form class="myForm text-center" action="users/login" method="post">
               <header>SignIn/LogIn</header>
 
               <!-- For email address input -->
@@ -34,14 +36,14 @@
               <!-- For password Input -->
               <div class="form-group">
                 <i class="fa fa-lock"></i>
-                <input type="password" class="myInput" placeholder="Password" name="userpassword" id="username" required />
+                <input type="password" class="myInput" placeholder="Password" name="userpassword" id="passowrd" required />
               </div>
 
               <a class="forgot-password" href="#">Forgot Password?</a>
 
               <!-- Submit button -->
               <input type="submit" class="button" value="LogIn/SignIn" />
-              <p class="log">Don't have an account? <a href="#">SignUp</a></p>
+              <p class="log">Don't have an account? <a href="/users/register">SignUp</a></p>
             </form>
           </div>
         </div>
