@@ -1,0 +1,8 @@
+<!-- check type of error ... -->
+<% if(typeof errors != 'undefined') { %>
+    <% errors.forEach(error => { %>
+        <!-- show the error -->
+        <%= error.msg %>
+<%    }); %>
+
+    <% } %>
