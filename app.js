@@ -2,36 +2,36 @@ const express = require("express");
 
 // const expressLayouts = require('express-ejs-layouts');
 
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const request = require("request");
 
 const app = express();
 
-
 const bodyParser = require("body-parser");
 
-
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
 // DB config
-const db = require('./config/keys').mongoURI;
+const db = require("./config/keys").mongoURI;
 
-mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+mongoose
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log(err));
 
 // app.use(expressLayouts);
-app.set('view engine', 'ejs');
-// app.use(express.static("public"));  
-app.use(express.static(__dirname + '/public'));
+app.set("view engine", "ejs");
+// app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 // app.get("/", (req, res) => {
 //   res.render("home");
 // });
-
 
 // app.get("/sign", (req, res) => {
 //   res.render("signin");
@@ -41,18 +41,21 @@ app.use(express.static(__dirname + '/public'));
 //   res.render("signup");
 // });
 
-
 // post method for signup page
-app.post("/signup", (req, res) => {
-  var name = req.body.username;
-  var email = req.body.useremail;
-  var password = req.body.userpassword;
-  // getting only on server
-  console.log(req.body);
-  // getting on page also users data
-  res.send("Finally: name is: " + name + "email is: " + email + "password is: " + password);
-});
-
+// app.post("/signup", (req, res) => {
+//   var name = req.body.username;
+//   var email = req.body.useremail;
+//   var password = req.body.userpassword;
+//   console.log(req.body);
+//   res.send(
+//     "Finally: name is: " +
+//       name +
+//       "email is: " +
+//       email +
+//       "password is: " +
+//       password
+//   );
+// });
 
 // post method for signin page
 app.post("/signin", (req, res) => {
@@ -74,41 +77,38 @@ app.get("/covidlive", (req, res) => {
       let data = [];
       for (let i = 0; i < body.statewise.length; i++) {
         data.push({
-          "State": body.statewise[i].state,
+          State: body.statewise[i].state,
 
-          "Confirmed": body.statewise[i].confirmed,
+          Confirmed: body.statewise[i].confirmed,
 
-          "Active": body.statewise[i].active,
+          Active: body.statewise[i].active,
 
-          "Recovered": body.statewise[i].recovered,
+          Recovered: body.statewise[i].recovered,
 
-          "Death": body.statewise[i].deaths
+          Death: body.statewise[i].deaths,
         });
       }
 
-      console.log("-----Total Cases in India " +
-        "and in each state-----");
+      console.log("-----Total Cases in India " + "and in each state-----");
       console.log(data);
       //Format to table
       console.table(data);
       res.render("covidLive", {
-        state: body.statewise
+        state: body.statewise,
       });
     }
-  })
-
+  });
 });
 
 // using routes
-app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
-
+app.use("/", require("./routes/index"));
+app.use("/users", require("./routes/users"));
 
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log(`Server has started successfully on port ${port}`);
 });
