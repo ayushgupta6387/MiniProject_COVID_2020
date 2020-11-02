@@ -1,3 +1,4 @@
+const e = require('express');
 const express = require('express');
 const router = express.Router();
 
@@ -6,7 +7,42 @@ router.get('/register', (req, res)=> res.render('signup'));
 
 // get data typed on register page
 router.post('/register', (req, res) => {
-     console.log(req.body);
-      res.send("Hey Get it!") })
+
+    // destructuring
+    const { name, email, password, password2 } = req.body;
+    let errors = [];
+
+// ---------------------------------------------------- APPLY VALIDATIONS
+
+    // check required fields
+    // passing msg as an object
+    if (!name || !email || !password || !password2) {
+        errors.push({ msg: 'Please fill all required fields' });
+    }
+
+    // check password match
+    if (password !== password2) {
+        errors.push({ msg: 'Password do not match' });
+    }
+
+    // check pass length
+    if(password.length < 6) {
+        errors.push( {msg: 'Password must be at least 6 characters long'} )
+    }
+
+    if (errors.length > 0) {
+       // if any above cond. will become true then
+       res.render('signup', {
+           errors,
+           name,
+           email,
+           password,
+           password2
+       })
+    }else{
+        res.send('pass');
+    }
+
+})
 
 module.exports = router;
