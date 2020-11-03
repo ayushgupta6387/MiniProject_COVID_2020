@@ -73,6 +73,7 @@ router.post('/register', (req, res) => {
                   newUser
                     .save()
                     .then(user => {
+                        // flash will store msg into session and shows after redirect
                       req.flash(
                         'success_msg',
                         'You are now registered and can log in'

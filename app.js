@@ -4,6 +4,9 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 
+const flash = require('connect-flash');
+const session = require('express-session');
+
 const request = require("request");
 
 const app = express();
@@ -15,6 +18,23 @@ app.use(
     extended: true,
   })
 );
+
+// express session
+app.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true,
+}))
+
+// connect flash
+app.use(flash());
+
+// Global vars
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  next();
+})
 
 // DB config
 const db = require("./config/keys").mongoURI;
@@ -58,16 +78,13 @@ app.use(express.static(__dirname + "/public"));
 // });
 
 // post method for signin page
-app.post("/signin", (req, res) => {
-  var email = req.body.useremail;
-  var password = req.body.userpassword;
+// app.post("/signin", (req, res) => {
+//   var email = req.body.useremail;
+//   var password = req.body.userpassword;
 
-  // getting only on server
-  console.log(req.body);
-
-  // getting on page also users data
-  res.send("email is: " + email + "password is: " + password);
-});
+//   console.log(req.body);
+//   res.send("email is: " + email + "password is: " + password);
+// });
 
 app.get("/covidlive", (req, res) => {
   const url = "https://api.covid19india.org/data.json";
