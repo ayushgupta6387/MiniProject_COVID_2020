@@ -14,7 +14,7 @@ module.exports = function(passport) {
                 .then(user => {
                     if(!user){
                         // error user msg
-                        return done(null, false, { mesage: 'That email is not registered' })
+                        return done(null, false, { message: 'That email is not registered' })
                     }
 
                     // match password

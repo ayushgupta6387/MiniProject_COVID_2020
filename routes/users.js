@@ -1,15 +1,16 @@
-const e = require('express');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-
+const passport = require('passport');
 // user model
 const User = require('../models/User');
+
 
 router.get('/login', (req, res)=> res.render('signin'));
 router.get('/register', (req, res)=> res.render('signup'));
 
 // get data typed on register page
+// handle register page
 router.post('/register', (req, res) => {
 
     // destructuring
@@ -87,5 +88,16 @@ router.post('/register', (req, res) => {
           });
         }
       });
+
+// handle login page
+router.post('/login', (req, res, next) =>{
+    passport.authenticate('local', {
+        successRedirect: '/dashboard',
+        failureRedirect: '/users/login',
+        failureFlash: true
+    })(req, res, next);
+});
+
+
 
 module.exports = router;
