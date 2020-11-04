@@ -6,12 +6,16 @@ const mongoose = require("mongoose");
 
 const flash = require('connect-flash');
 const session = require('express-session');
+var passport = require('passport');
 
 const request = require("request");
 
 const app = express();
+// Passport config
+require('./config/passport')(passport);
 
 const bodyParser = require("body-parser");
+
 
 app.use(
   bodyParser.urlencoded({
