@@ -249,8 +249,6 @@ h4 {
   padding: 5%;
 }
 
-
-
 .twoColumnImg {
   background-color: wheat;
   height: 380px;
@@ -314,7 +312,6 @@ h4 {
   margin-top: 20px;
 }
 
-
 /* main section */
 .main-section {
   margin-bottom: 20px;
@@ -364,7 +361,9 @@ h4 {
 }
 
 /* All links port h2 */
-.links1 h2, .links2 h2, .links3 h2 {
+.links1 h2,
+.links2 h2,
+.links3 h2 {
   color: lightgray;
   font-size: 1.4rem;
   margin-bottom: 10px;
@@ -538,7 +537,9 @@ hr {
     line-height: 24px;
   }
 
-  .links1 h2, .links2 h2, .links3 h2 {
+  .links1 h2,
+  .links2 h2,
+  .links3 h2 {
     color: lightgray;
     font-size: 1.4rem;
     margin-bottom: 10px;
@@ -708,7 +709,9 @@ hr {
     line-height: 24px;
   }
 
-  .links1 h2, .links2 h2, .links3 h2 {
+  .links1 h2,
+  .links2 h2,
+  .links3 h2 {
     color: lightgray;
     font-size: 1.4rem;
     margin-bottom: 10px;
@@ -716,7 +719,9 @@ hr {
     margin-top: 20px;
   }
 
-  .links3 ul, .links2 ul, .links1 ul {
+  .links3 ul,
+  .links2 ul,
+  .links1 ul {
     text-align: left;
     width: 70%;
     margin: auto;
