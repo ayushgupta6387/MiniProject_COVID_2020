@@ -38,18 +38,18 @@ app.use(passport.session());
 // connect flash
 app.use(flash());
 
-<<<<<<< HEAD
+
 
 app.get("/", (req, res) => {
   res.render("home");
-=======
+
 // Global vars
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
   res.locals.error = req.flash("error");
   next();
->>>>>>> 36503e1499f6f68f4df6dcea197406221cd65bc2
+
 });
 
 // DB config
@@ -108,7 +108,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.get("/covidlive", (req, res) => {
   const url = "https://api.covid19india.org/data.json";
-<<<<<<< HEAD
+
 
 request(url, (error, response, body) => {
 
@@ -122,17 +122,17 @@ request(url, (error, response, body) => {
     // body - response data
 
     // 200 - successful response
-=======
+
   request(url, (error, response, body) => {
->>>>>>> 36503e1499f6f68f4df6dcea197406221cd65bc2
+
     if (!error && response.statusCode == 200) {
       body = JSON.parse(body);
-<<<<<<< HEAD
+
 
       //The data have lot of extra properties
       // We will filter it
-=======
->>>>>>> 36503e1499f6f68f4df6dcea197406221cd65bc2
+
+
       let data = [];
       for (let i = 0; i < body.statewise.length; i++) {
         data.push({
