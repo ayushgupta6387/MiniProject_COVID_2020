@@ -40,9 +40,6 @@ app.use(flash());
 
 
 
-app.get("/", (req, res) => {
-  res.render("home");
-
 // Global vars
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash("success_msg");
@@ -110,7 +107,7 @@ app.get("/covidlive", (req, res) => {
   const url = "https://api.covid19india.org/data.json";
 
 
-request(url, (error, response, body) => {
+  request(url, (error, response, body) => {
 
     // Error - Any possible error when
     // request is made.
@@ -123,41 +120,43 @@ request(url, (error, response, body) => {
 
     // 200 - successful response
 
-  request(url, (error, response, body) => {
+    request(url, (error, response, body) => {
 
-    if (!error && response.statusCode == 200) {
-      body = JSON.parse(body);
-
-
-      //The data have lot of extra properties
-      // We will filter it
+      if (!error && response.statusCode == 200) {
+        body = JSON.parse(body);
 
 
-      let data = [];
-      for (let i = 0; i < body.statewise.length; i++) {
-        data.push({
-          State: body.statewise[i].state,
+        //The data have lot of extra properties
+        // We will filter it
 
-          Confirmed: body.statewise[i].confirmed,
 
-          Active: body.statewise[i].active,
+        let data = [];
+        for (let i = 0; i < body.statewise.length; i++) {
+          data.push({
+            State: body.statewise[i].state,
 
-          Recovered: body.statewise[i].recovered,
+            Confirmed: body.statewise[i].confirmed,
 
-          Death: body.statewise[i].deaths,
+            Active: body.statewise[i].active,
+
+            Recovered: body.statewise[i].recovered,
+
+            Death: body.statewise[i].deaths,
+          });
+        }
+
+        console.log("-----Total Cases in India " + "and in each state-----");
+        console.log(data);
+        //Format to table
+        console.table(data);
+        res.render("covidLive", {
+          state: body.statewise,
         });
       }
-
-      console.log("-----Total Cases in India " + "and in each state-----");
-      console.log(data);
-      //Format to table
-      console.table(data);
-      res.render("covidLive", {
-        state: body.statewise,
-      });
-    }
+    });
   });
 });
+
 
 // using routes
 app.use("/", require("./routes/index"));
@@ -168,6 +167,6 @@ if (port == null || port == "") {
   port = 3000;
 }
 
-app.listen(port, function () {
+app.listen(port, function() {
   console.log(`Server has started successfully on port ${port}`);
 });
