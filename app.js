@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
+
 app.get("/", (req, res) => {
   res.render("home");
 });
@@ -53,7 +54,8 @@ app.post("/signin", (req, res) => {
 
 app.get("/covidlive", (req, res) => {
   const url = "https://api.covid19india.org/data.json";
-  request(url, (error, response, body) => {
+
+request(url, (error, response, body) => {
 
     // Error - Any possible error when
     // request is made.
@@ -70,6 +72,7 @@ app.get("/covidlive", (req, res) => {
       // The response data will be in string
       // Convert it to Object.
       body = JSON.parse(body);
+
       //The data have lot of extra properties
       // We will filter it
       let data = [];
