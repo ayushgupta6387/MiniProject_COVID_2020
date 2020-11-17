@@ -7,6 +7,7 @@ const User = require("../models/User");
 
 router.get("/login", (req, res) => res.render("signin"));
 router.get("/register", (req, res) => res.render("signup"));
+router.get("/saveform", checkAuthentication,(req, res) => res.render("form"));
 
 // get data typed on register page
 // handle register page
