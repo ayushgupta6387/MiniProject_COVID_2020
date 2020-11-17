@@ -103,7 +103,7 @@ router.post("/register", (req, res) => {
 // handle login page
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", {
-    successRedirect: "/dashboard",
+    successRedirect: "/users/saveform",
     failureRedirect: "/users/login",
     failureFlash: true,
   })(req, res, next);
@@ -119,7 +119,7 @@ router.post("/login", (req, res, next) => {
 function checkAuthentication(req,res,next){
   if(req.isAuthenticated()){
       //req.isAuthenticated() will return true if user is logged in
-    res.redirect("users/register")
+    // res.redirect("/users/saveform")
       next();
   } else{
       res.redirect("/users/login");
