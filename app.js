@@ -105,30 +105,10 @@ app.use(express.static(__dirname + "/public"));
 
 app.get("/covidlive", (req, res) => {
   const url = "https://api.covid19india.org/data.json";
-
-
   request(url, (error, response, body) => {
-
-    // Error - Any possible error when
-    // request is made.
-
-    // Eesponse - HTTP response status codes
-    // indicate whether a specific HTTP
-    // request has been successfully completed
-
-    // body - response data
-
-    // 200 - successful response
-
-    request(url, (error, response, body) => {
 
       if (!error && response.statusCode == 200) {
         body = JSON.parse(body);
-
-
-        //The data have lot of extra properties
-        // We will filter it
-
 
         let data = [];
         for (let i = 0; i < body.statewise.length; i++) {
@@ -146,16 +126,65 @@ app.get("/covidlive", (req, res) => {
         }
 
         console.log("-----Total Cases in India " + "and in each state-----");
-        console.log(data);
+        // console.log(data);
         //Format to table
-        console.table(data);
+        // console.table(data);
         res.render("covidLive", {
           state: body.statewise,
         });
       }
     });
   });
-});
+
+ // now for worldWise
+    // this is for world
+  // app.get("/covidLive", (req, res)=>{
+  //   const url = "https://api.covid19api.com/summary";
+  //   request(url, (error, response, body) => { 
+  //       if (!error && response.statusCode == 200) { 
+  //           body = JSON.parse(body); 
+  //           let countryData = [];
+  //           for (let i = 0; i< body.Countries.length; i++) {
+  //           countryData.push({
+  //             Country: body.Countries[i].Country,
+  //             ConfirmedCountry: body.Countries[i].TotalConfirmed,
+  //             ActiveCountry: body.Countries[i].active,
+  //             Recovered: body.Countries[i].TotalRecovered,
+  //             Death: body.Countries[i].TotalDeaths
+  //           })
+  //           }
+  //           res.render("covidLive", {Country: body.Countries,})
+
+  //       }
+  //       })
+  //     })
+
+
+
+
+
+
+
+
+app.get('/gdp', (req, res)=>{
+  res.render('gdp')
+})
+app.get('/home', (req, res)=>{
+  res.render('home')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // using routes

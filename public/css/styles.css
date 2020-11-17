@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 /* Sign up and Register Page */
 .signup,
@@ -856,4 +859,16 @@ hr {
 /* COVID LIVE */
 table {
   margin-top: 20px;
+}
+
+/* gdp image */
+.gdp1{
+  padding: 120px 0px;
+}
+.gdpDiv{
+  background-color: lightblue;
+}
+.gdpDiv h5{
+  text-align: center;
+  font-size: 3vw;
 }
