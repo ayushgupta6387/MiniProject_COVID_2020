@@ -212,7 +212,6 @@
   <hr class="my-4" />
 
   <!-- form -->
-  <form class="" action="index.html" method="post">
     <section id="suggestionForm">
       <div class="container-fluid">
         <div class="row welcome text-center">
@@ -224,55 +223,18 @@
       </div>
       <div class="container-fluid padding">
         <div class="row padding">
-          <div class="col-md-8">
-            <form class="" action="index.html" method="post">
-              <div class="form-group">
-                <label for="exampleFormControlInput1">Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Write your name here"
-                />
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                />
-              </div>
-
-              <div class="form-group submitText">
-                <label for="exampleFormControlTextarea1">Your Suggestion</label>
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                ></textarea>
-                <input
-                  type="submit"
-                  class="button btn-lg"
-                  name=""
-                  value="Submit"
-                />
-                <input
-                  type="reset"
-                  name=""
-                  value="Reset"
-                  class="button btn-lg"
-                />
-              </div>
-            </form>
+          <div class="col-md-4">
+            <img src="images/suggest.png" class="suggestimg1" alt="" />
+          </div>
+          <div class="col-md-4 middle">
+            <a href="/users/saveform" class="submitdirect">Click here to Submit form</a>
           </div>
           <div class="col-md-4 center">
-            <img src="images/suggest.png" alt="" />
+            <img src="images/image4.png" class="suggestimg2" alt="">
           </div>
         </div>
       </div>
     </section>
-  </form>
 
   <hr class="my-4" />
   <%- include("footer") -%>

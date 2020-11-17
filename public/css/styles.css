@@ -297,10 +297,11 @@ h4 {
 
 /* suggestion */
 #suggestionForm {
+  /* background-color: gray; */
   background-color: #3aafa9;
-  padding: 7%;
+  padding: 5%;
 }
-
+/* 
 #suggestionForm .submitText {
   padding-bottom: 10px;
 }
@@ -313,7 +314,34 @@ h4 {
   display: inline-block;
   margin-right: 10px;
   margin-top: 20px;
+} */
+.suggestimg1{
+  /* background-color: red; */
 }
+.suggestimg2{
+  width: 65%;
+  /* background-color: red; */
+}
+.submitdirect{
+  font-size: 2.2vw;
+  display: inline-block;
+  margin-top: 60px;
+  color: blue;
+  animation: blinker 2s linear infinite;
+  text-decoration: none;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.submitdirect:hover{
+  text-decoration: none;
+  animation: none;
+  color: red
+}
+
+
 
 /* main section */
 .main-section {
