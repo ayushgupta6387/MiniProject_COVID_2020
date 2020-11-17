@@ -109,6 +109,7 @@ router.post("/saveform", (req, res)=>{
   if(req.isAuthenticated()){
     const newData = new Form({
       name: req.body.username,
+      email: req.body.usermail,
       suggestion: req.body.mysuggestion
     }) 
     newData.save(function(err){
