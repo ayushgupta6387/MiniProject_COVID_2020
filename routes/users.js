@@ -4,23 +4,9 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 // user model
 const User = require("../models/User");
-const Form = require("../models/User");
 
 router.get("/login", (req, res) => res.render("signin"));
 router.get("/register", (req, res) => res.render("signup"));
-
-
-
-
-
-
-router.get("/saveform", checkAuthentication, (req, res) => res.render("form"));
-
-
-
-
-
-
 
 // get data typed on register page
 // handle register page
