@@ -172,6 +172,9 @@ app.get('/gdp', (req, res)=>{
 app.get('/home', (req, res)=>{
   res.render('home')
 })
+app.get('/history', (req, res)=>{
+  res.render('history')
+})
 
 
 
