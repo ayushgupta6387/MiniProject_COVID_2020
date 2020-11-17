@@ -18,6 +18,7 @@
                   type="text"
                   class="form-control"
                   placeholder="Write your name here"
+                  name="username"
                 />
               </div>
               
@@ -28,6 +29,7 @@
                   class="form-control"
                   id="exampleFormControlTextarea1"
                   rows="3"
+                  name="mysuggestion"
                 ></textarea>
                 <input
                   type="submit"
@@ -52,3 +54,9 @@
     </section>
   </form>
 
+
+
+
+
+  <p class="lead mb-3">Welcome <%= name %></p>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>

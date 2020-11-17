@@ -4,10 +4,14 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 // user model
 const User = require("../models/User");
+const Form = require("../models/form");
 
 router.get("/login", (req, res) => res.render("signin"));
 router.get("/register", (req, res) => res.render("signup"));
-router.get("/saveform", checkAuthentication,(req, res) => res.render("form"));
+// router.get("/saveform", checkAuthentication,(req, res) => res.render("form"));
+router.get("/saveform", checkAuthentication,(req, res) => res.render("form", {
+  name: req.user.name
+}));
 
 // get data typed on register page
 // handle register page
@@ -100,6 +104,22 @@ router.post("/login", (req, res, next) => {
 
 
 
+router.post("/saveform", (req, res)=>{
+  // const {username} = req.body;
+  if(req.isAuthenticated()){
+    const newData = new Form({
+      name: req.body.username,
+      suggestion: req.body.mysuggestion
+    }) 
+    newData.save(function(err){
+     if(err){
+       console.log(err);
+     }else{
+       res.render('home')
+     }
+    })
+  }
+})
 
 
 
