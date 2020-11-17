@@ -4,23 +4,9 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 // user model
 const User = require("../models/User");
-const Form = require("../models/User");
 
 router.get("/login", (req, res) => res.render("signin"));
 router.get("/register", (req, res) => res.render("signup"));
-
-
-
-
-
-
-router.get("/saveform", checkAuthentication, (req, res) => res.render("form"));
-
-
-
-
-
-
 
 // get data typed on register page
 // handle register page
@@ -108,38 +94,6 @@ router.post("/login", (req, res, next) => {
     failureFlash: true,
   })(req, res, next);
 });
-
-
-
-
-
-
-
-
-function checkAuthentication(req,res,next){
-  if(req.isAuthenticated()){
-      //req.isAuthenticated() will return true if user is logged in
-    res.redirect("users/register")
-      next();
-  } else{
-      res.redirect("/users/login");
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // handle logout
 router.get("/logout", (req, res) => {
