@@ -954,3 +954,37 @@ table {
 .part41{
   display: flex;
 } */
+
+/* origin */
+.origin{
+  color: white;
+  background-color: rgb(16, 170, 221);
+}
+.structure{
+  background-color: #fbeec1;
+}
+
+.part5{
+  padding: 10px;
+  background-color: #501b1d;
+  color: white;
+}
+.part5 h5{
+  text-align: center;
+}
+.ace1{
+margin-left: 200px;
+margin-top: 15px;
+
+}
+.ace2{
+  width: 60%;
+}
+@media (max-width: 500px){
+  .ace1{
+    margin-left: 80px;
+  }
+  .ace2{
+    margin-left: 65px;
+  }
+}
