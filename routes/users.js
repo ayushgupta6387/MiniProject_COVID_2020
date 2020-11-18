@@ -101,9 +101,6 @@ router.post("/login", (req, res, next) => {
 });
 
 
-
-
-
 router.post("/saveform", (req, res)=>{
   // const {username} = req.body;
   if(req.isAuthenticated()){
@@ -111,12 +108,14 @@ router.post("/saveform", (req, res)=>{
       name: req.body.username,
       email: req.body.usermail,
       suggestion: req.body.mysuggestion
-    }) 
+    })
     newData.save(function(err){
      if(err){
-       console.log(err);
+       console.log(err)
      }else{
-       res.render('home')
+       Form.find({}, function(err, foundItems) {
+         res.render("subpage", {newItems: foundItems});
+       })
      }
     })
   }
@@ -133,20 +132,6 @@ function checkAuthentication(req,res,next){
       res.redirect("/users/login");
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // handle logout
