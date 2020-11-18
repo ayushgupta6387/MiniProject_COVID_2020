@@ -175,6 +175,9 @@ app.get('/home', (req, res)=>{
 app.get('/history', (req, res)=>{
   res.render('history')
 })
+app.get('/covidintro', (req, res)=>{
+  res.render('covidintro')
+})
 
 
 
