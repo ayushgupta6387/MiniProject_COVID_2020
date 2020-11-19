@@ -628,3 +628,43 @@ margin-top: 15px;
 .all-suggestion a:hover {
   font-size: 1.8rem;
 }
+
+/* Sub page */
+
+.complete {
+  background-color: #f1f3f8;
+}
+
+.Heading-suggestion {
+  padding-top: 20px;
+  color: #07689f;
+  text-align: center;
+}
+
+.user-suggestion {
+  padding: 5%;
+}
+
+.user {
+  padding: 3%;
+}
+
+.user .username {
+    color: #0c056d;
+    font-size: 1.5rem;
+}
+
+.user .email {
+    color: #0c056d;
+    font-size: 1.5rem;
+}
+
+.user .sugg {
+    color: #0c056d;
+    font-size: 1.5rem;
+}
+
+.user .time {
+    color: #0c056d;
+    font-size: 1.5rem;
+}
