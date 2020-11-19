@@ -1025,3 +1025,23 @@ margin-top: 15px;
   margin: 20px;
   display: inline-block;
 }
+
+.all-suggestion {
+  text-align: center;
+  background-color: #bce6eb;
+}
+
+.all-suggestion a {
+
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 2rem;
+  color: #120078;
+  text-decoration: none;
+  margin: 20px;
+  background-color: #aee6e6;
+}
+
+.all-suggestion a:hover {
+  font-size: 1.8rem;
+}
