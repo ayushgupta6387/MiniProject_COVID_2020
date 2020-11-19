@@ -308,7 +308,7 @@ h4 {
   background-color: #3aafa9;
   padding: 5%;
 }
-/* 
+/*
 #suggestionForm .submitText {
   padding-bottom: 10px;
 }
@@ -955,7 +955,7 @@ table {
 
 }
 .part3 p{
- 
+
   margin-top: 100px;
 }
 .part41{
@@ -1000,4 +1000,28 @@ margin-top: 15px;
 /* covidintro */
 .detection{
   width: 60%;
+}
+
+/* For suggestion page */
+.suggestion-div {
+     background-color: #aee6e6;
+     text-align: center;
+     padding: 10px;
+}
+
+.suggestion-div p {
+  color: #120078;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+.suggestion-div a {
+  color: white;
+  font-size: 20px;
+}
+
+.submitText input {
+  margin: 20px;
+  display: inline-block;
 }
