@@ -414,8 +414,22 @@ table {
   padding: 120px 0px;
 }
 .gdpDiv{
+  padding: 3%;
   background-color: lightblue;
 }
+
+.gdpDiv img {
+  border-radius: 40%;
+}
+
+.gdpcard {
+  padding: 5%;
+}
+
+.gdpcard .card-text {
+  padding: 5%;  
+}
+
 .gdpDiv h5{
   text-align: center;
   font-size: 3vw;
