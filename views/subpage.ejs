@@ -1,16 +1,22 @@
-<%- include('header') -%>
+<%- include('nav2') -%>
 
+<div class="complete">
 
-<% newItems.forEach(function(item){ %>
-  <p>  <%= item.name %></p>
-  <p><%= item.email %></p>
-  <p><%= item.suggestion %></p>
-  <p>
+  <div class="Heading-suggestion">
+    <h1>All User Suggestions</h1>
+  </div>
 
-    <%= item.createdAt %>
-  </p>
+  <div class="user-suggestion">
 
-  
-<% }) %>
+    <% newItems.forEach(function(item){ %>
+    <div class="user">
+      <p class="username">Name : <%= item.name %></p>
+      <p class="email">Email : <%= item.email %></p>
+      <p class="sugg">Suggestion : <%= item.suggestion %></p>
+      <p class="time">Creation Time : <%= item.createdAt %></p>
+      </div>
+      <% }) %>
 
+  </div>
+</div>
 <%- include('footer') -%>
