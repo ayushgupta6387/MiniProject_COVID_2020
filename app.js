@@ -140,9 +140,9 @@ app.get("/covidlive", (req, res) => {
     // this is for world
   // app.get("/covidLive", (req, res)=>{
   //   const url = "https://api.covid19api.com/summary";
-  //   request(url, (error, response, body) => { 
-  //       if (!error && response.statusCode == 200) { 
-  //           body = JSON.parse(body); 
+  //   request(url, (error, response, body) => {
+  //       if (!error && response.statusCode == 200) {
+  //           body = JSON.parse(body);
   //           let countryData = [];
   //           for (let i = 0; i< body.Countries.length; i++) {
   //           countryData.push({
@@ -168,10 +168,10 @@ app.get("/covidlive", (req, res) => {
 
 app.get('/gdp', (req, res)=>{
   res.render('gdp')
-})
+});
 app.get('/home', (req, res)=>{
   res.render('home')
-})
+});
 app.get('/history', (req, res)=>{
   res.render('history')
 })
