@@ -9,7 +9,7 @@ const Form = require("../models/form");
 router.get("/login", (req, res) => res.render("signin"));
 router.get("/register", (req, res) => res.render("signup"));
 // router.get("/saveform", checkAuthentication,(req, res) => res.render("form"));
-router.get("/saveform", checkAuthentication,(req, res) => res.render("form", {
+router.get("/saveform", checkAuthentication, (req, res) => res.render("form", {
   name: req.user.name
 }));
 
@@ -17,7 +17,12 @@ router.get("/saveform", checkAuthentication,(req, res) => res.render("form", {
 // handle register page
 router.post("/register", (req, res) => {
   // destructuring
-  const { name, email, password, password2 } = req.body;
+  const {
+    name,
+    email,
+    password,
+    password2
+  } = req.body;
   let errors = [];
 
   // ---------------------------------------------------- APPLY VALIDATIONS
@@ -25,17 +30,23 @@ router.post("/register", (req, res) => {
   // check required fields
   // passing msg as an object
   if (!name || !email || !password || !password2) {
-    errors.push({ msg: "Please fill all required fields" });
+    errors.push({
+      msg: "Please fill all required fields"
+    });
   }
 
   // check password match
   if (password !== password2) {
-    errors.push({ msg: "Password do not match" });
+    errors.push({
+      msg: "Password do not match"
+    });
   }
 
   // check pass length
   if (password.length < 6) {
-    errors.push({ msg: "Password must be at least 6 characters long" });
+    errors.push({
+      msg: "Password must be at least 6 characters long"
+    });
   }
 
   if (errors.length > 0) {
@@ -50,10 +61,14 @@ router.post("/register", (req, res) => {
   } else {
     // validation passed
     // check if already exist
-    User.findOne({ email: email }).then((user) => {
+    User.findOne({
+      email: email
+    }).then((user) => {
       if (user) {
         // user exists send this error
-        errors.push({ msg: "Email is already registered" });
+        errors.push({
+          msg: "Email is already registered"
+        });
         res.render("signup", {
           errors,
           name,
@@ -101,35 +116,40 @@ router.post("/login", (req, res, next) => {
 });
 
 
-router.post("/saveform", (req, res)=>{
+router.post("/saveform", (req, res) => {
   // const {username} = req.body;
-  if(req.isAuthenticated()){
+  if (req.isAuthenticated()) {
     const newData = new Form({
       name: req.body.username,
       email: req.body.usermail,
       suggestion: req.body.mysuggestion
     })
-    newData.save(function(err){
-     if(err){
-       console.log(err)
-     }else{
-       Form.find({}, function(err, foundItems) {
-         res.render("subpage", {newItems: foundItems});
-       })
-     }
-    })
+    newData.save(function(err) {
+        if (err) {
+          console.log(err)
+        } else {
+          res.redirect("/users/saveform");
+        }
+    });
+
   }
-})
+});
 
+router.get("/subpage", (req, res) => {
+  Form.find({}, function(err, foundItems) {
+    res.render("subpage", {
+      newItems: foundItems
+    });
+  });
+});
 
-
-function checkAuthentication(req,res,next){
-  if(req.isAuthenticated()){
-      //req.isAuthenticated() will return true if user is logged in
+function checkAuthentication(req, res, next) {
+  if (req.isAuthenticated()) {
+    //req.isAuthenticated() will return true if user is logged in
     // res.redirect("/users/saveform")
-      next();
-  } else{
-      res.redirect("/users/login");
+    next();
+  } else {
+    res.redirect("/users/login");
   }
 }
 
