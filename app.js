@@ -66,131 +66,56 @@ app.set("view engine", "ejs");
 // app.use(express.static("public"));
 app.use(express.static(__dirname + "/public"));
 
-// app.get("/", (req, res) => {
-//   res.render("home");
-// });
-
-// app.get("/sign", (req, res) => {
-//   res.render("signin");
-// });
-
-// app.get("/register", (req, res) => {
-//   res.render("signup");
-// });
-
-// post method for signup page
-// app.post("/signup", (req, res) => {
-//   var name = req.body.username;
-//   var email = req.body.useremail;
-//   var password = req.body.userpassword;
-//   console.log(req.body);
-//   res.send(
-//     "Finally: name is: " +
-//       name +
-//       "email is: " +
-//       email +
-//       "password is: " +
-//       password
-//   );
-// });
-
-// post method for signin page
-// app.post("/signin", (req, res) => {
-//   var email = req.body.useremail;
-//   var password = req.body.userpassword;
-
-//   console.log(req.body);
-//   res.send("email is: " + email + "password is: " + password);
-// });
 
 app.get("/covidlive", (req, res) => {
   const url = "https://api.covid19india.org/data.json";
   request(url, (error, response, body) => {
 
-      if (!error && response.statusCode == 200) {
-        body = JSON.parse(body);
+    if (!error && response.statusCode == 200) {
+      body = JSON.parse(body);
 
-        let data = [];
-        for (let i = 0; i < body.statewise.length; i++) {
-          data.push({
-            State: body.statewise[i].state,
+      let data = [];
+      for (let i = 0; i < body.statewise.length; i++) {
+        data.push({
+          State: body.statewise[i].state,
 
-            Confirmed: body.statewise[i].confirmed,
+          Confirmed: body.statewise[i].confirmed,
 
-            Active: body.statewise[i].active,
+          Active: body.statewise[i].active,
 
-            Recovered: body.statewise[i].recovered,
+          Recovered: body.statewise[i].recovered,
 
-            Death: body.statewise[i].deaths,
-          });
-        }
-
-        console.log("-----Total Cases in India " + "and in each state-----");
-        // console.log(data);
-        //Format to table
-        // console.table(data);
-        res.render("covidLive", {
-          state: body.statewise,
+          Death: body.statewise[i].deaths,
         });
       }
-    });
+
+      console.log("-----Total Cases in India " + "and in each state-----");
+      // console.log(data);
+      //Format to table
+      // console.table(data);
+      res.render("covidLive", {
+        state: body.statewise,
+      });
+    }
   });
-
- // now for worldWise
-    // this is for world
-  // app.get("/covidLive", (req, res)=>{
-  //   const url = "https://api.covid19api.com/summary";
-  //   request(url, (error, response, body) => {
-  //       if (!error && response.statusCode == 200) {
-  //           body = JSON.parse(body);
-  //           let countryData = [];
-  //           for (let i = 0; i< body.Countries.length; i++) {
-  //           countryData.push({
-  //             Country: body.Countries[i].Country,
-  //             ConfirmedCountry: body.Countries[i].TotalConfirmed,
-  //             ActiveCountry: body.Countries[i].active,
-  //             Recovered: body.Countries[i].TotalRecovered,
-  //             Death: body.Countries[i].TotalDeaths
-  //           })
-  //           }
-  //           res.render("covidLive", {Country: body.Countries,})
-
-  //       }
-  //       })
-  //     })
+});
 
 
-
-
-
-
-
-
-app.get('/gdp', (req, res)=>{
+app.get('/gdp', (req, res) => {
   res.render('gdp')
 });
-app.get('/home', (req, res)=>{
+
+app.get('/home', (req, res) => {
   res.render('home')
 });
-app.get('/history', (req, res)=>{
+
+app.get('/history', (req, res) => {
   res.render('history')
-})
-app.get('/covidintro', (req, res)=>{
+});
+
+app.get('/covidintro', (req, res) => {
   res.render('covidintro')
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 
 // using routes
