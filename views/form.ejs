@@ -7,81 +7,47 @@
     <a href="/home" class="btn btn-secondary">Home</a>
   </div>
 
-    <section id="suggestionForm">
-      <div class="container-fluid">
-        <div class="row welcome text-center">
-          <div class="col-12">
-            <h1 class="display-5">Suggestion Form</h1>
-          </div>
-          <hr />
+  <section id="suggestionForm">
+    <div class="container-fluid">
+      <div class="row welcome text-center">
+        <div class="col-12">
+          <h1 class="display-5">Suggestion Form</h1>
         </div>
+        <hr />
       </div>
-      <div class="container-fluid padding">
-        <div class="row padding">
-          <div class="col-md-8">
-            <form class="" action="/users/saveform" method="post">
-              <div class="form-group">
-                <label for="exampleFormControlInput1">Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Write your name here"
-                  name="username"
-                  required
-                  autocomplete="off"
-                />
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                  name="usermail"
-                  required
-                  autocomplete="off"
-                />
-              </div>
-
-              <div class="form-group submitText">
-                <label for="exampleFormControlTextarea1">Your Suggestion</label>
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                  name="mysuggestion"
-                  required
-                  minlength="11"
-                  placeholder="Write your suggestion"
-
-                ></textarea>
-                <input
-                  type="submit"
-                  class="button btn-lg"
-                  name=""
-                  value="Submit"
-                />
-                <input
-                  type="reset"
-                  name=""
-                  value="Reset"
-                  class="button btn-lg"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="col-md-4 center" style="text-align: center;">
-            <img src="../images/suggest.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="all-suggestion">
-      <a href="/users/subpage">See suggestions given by all people.</a>
     </div>
+    <div class="container-fluid padding">
+      <div class="row padding">
+        <div class="col-md-8">
+          <form class="" action="/users/saveform" method="post">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Name</label>
+              <input type="text" class="form-control" placeholder="Write your name here" name="username" required autocomplete="off" />
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="usermail" required autocomplete="off" />
+            </div>
 
-  </form>
+            <div class="form-group submitText">
+              <label for="exampleFormControlTextarea1">Your Suggestion</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="mysuggestion" required minlength="11" placeholder="Write your suggestion"></textarea>
+              <input type="submit" class="button btn-lg" name="" value="Submit" />
+              <input type="reset" name="" value="Reset" class="button btn-lg" />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4 center" style="text-align: center;">
+          <img src="../images/suggest.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="all-suggestion">
+    <a href="/users/subpage">See suggestions given by all people.</a>
+  </div>
+
+</form>
 
 
 
