@@ -1,0 +1,33 @@
+<%- include('nav2') -%>
+
+<table class="table table-hover table-dark">
+  <div class="container-fluid">
+    <div class="row welcome text-center">
+      <div class="col-12">
+        <h1 class="display-4">COVID UPDATES</h1>
+      </div>
+    </div>
+  </div>
+  <thead>
+    <tr>
+      <th scope="col">Country Name</th>
+      <th scope="col">Active</th>
+      <th scope="col">Recovered</th>
+      <th scope="col">Deceased</th>
+      <th scope="col">Confirmed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let i = 0; i < allData.length; i++) { %>
+    <tr>
+      <td><%= allData[i].Country %></td>
+      <td><%= allData[i].Active %></td>
+      <td><%= allData[i].TotalRecovered %></td>
+      <td><%= allData[i].TotalDeaths %></td>
+      <td><%= allData[i].TotalConfirmed %></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<%- include('footer') -%>
