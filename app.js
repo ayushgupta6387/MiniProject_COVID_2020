@@ -118,8 +118,8 @@ app.get("/countrylive", (req, res)=>{
              })
 
             }
-            console.table(body.Countries[7].Country);
-            console.log(body.Countries[0].NewConfirmed);
+            // console.table(body.Countries[7].Country);
+            // console.log(body.Countries[0].NewConfirmed);
             console.log(countryData)
             res.render("countrylive", {
               allData: body.Countries,

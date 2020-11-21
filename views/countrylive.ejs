@@ -6,6 +6,7 @@
     <div class="row welcome text-center">
       <div class="col-12">
         <h1 class="display-4">COVID UPDATES</h1>
+        <h4><a href="#myChart">Click here to see real time chart!</a></h4>
       </div>
     </div>
   </div>
@@ -22,7 +23,7 @@
     <% for (let i = 0; i < allData.length; i++) { %>
     <tr>
       <td><%= allData[i].Country %></td>
-      <td><%= allData[i].TotalConfirmed - allData[i].TotalRecovered %></td>
+      <td><%= allData[i].TotalConfirmed - allData[i].TotalRecovered - allData[i].TotalDeaths %></td>
       <td><%= allData[i].TotalRecovered %></td>
       <td><%= allData[i].TotalDeaths %></td>
       <td><%= allData[i].TotalConfirmed %></td>
