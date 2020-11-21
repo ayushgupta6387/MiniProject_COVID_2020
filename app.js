@@ -1,5 +1,5 @@
 const express = require("express");
-
+var $ = require('jquery')
 // const expressLayouts = require('express-ejs-layouts');
 
 const mongoose = require("mongoose");
@@ -100,7 +100,7 @@ app.get("/covidlive", (req, res) => {
   });
 });
 
-// app.get("countrylive", (req, res)=>{
+app.get("countrylive", (req, res)=>{
     const url = "https://api.covid19api.com/summary";
     request(url, (error, response, body) => { 
         if (!error && response.statusCode == 200) { 
@@ -126,7 +126,7 @@ app.get("/covidlive", (req, res) => {
             // })
         }
         })
-      // });
+      });
 
 
 
