@@ -1,8 +1,8 @@
 
-<%- include('nav2')  %> 
+<%- include('nav2')  %>
 
 
-    
+
 <table class="table table-hover table-dark">
   <div class="container-fluid">
     <div class="row welcome text-center">
@@ -37,50 +37,10 @@
 
 
 <div class="container-fluid bg-light p-5 text-center my-3">
-  <h1 class="">Covid-19 Tracker India</h1>
+  <h1 class="">India Covid-19 Tracker</h1>
 </div>
-
-<div class="container my-5">
-  <div class="row text-center">
-    <div class="col-3 text-warning">
-      <h5>Confirmed</h5>
-      <p id="confirmed"></p>
-    </div>
-    <div class="col-3 text-info">
-      <h5>Active</h5>
-      <p id="active"></p>
-    </div>
-    <div class="col-3 text-success">
-      <h5>Recovered</h5>
-      <p id="recovered"></p>
-    </div>
-    <div class="col-3 text-danger">
-      <h5>Deceased</h5>
-      <p id="deaths"></p>
-    </div>
-  </div>
-</div>
-
-
-
-
-
 
 <canvas id="myChart"></canvas>
-
-<div class="container text-center my-5">
-  <h6 class="text-info">
-    *Click on the Confirmed/Recovered/Deaths buttons above to see the chart
-    individually.*
-  </h6>
-</div>
-
-
-    
-
-
-
-
 
 
 <!-- JAVASCRIPT---------------------------------------------------------------- -->
@@ -130,17 +90,17 @@ deaths.shift();
 // $("#deaths").append(total_deaths);
 
 // using js
-var aconfirmed = document.getElementById('confirmed');
-aconfirmed.innerHTML = total_confirmed;
-
-var aactive = document.getElementById('active');
-aactive.innerHTML = total_active;
-
-var adeaths = document.getElementById('deaths');
-adeaths.innerHTML = total_deaths;
-
-var arecovered = document.getElementById('recovered');
-arecovered.innerHTML = total_recovered;
+// var aconfirmed = document.getElementById('confirmed');
+// aconfirmed.innerHTML = total_confirmed;
+//
+// var aactive = document.getElementById('active');
+// aactive.innerHTML = total_active;
+//
+// var adeaths = document.getElementById('deaths');
+// adeaths.innerHTML = total_deaths;
+//
+// var arecovered = document.getElementById('recovered');
+// arecovered.innerHTML = total_recovered;
 
 // Chart initialization
 var myChart = document.getElementById("myChart").getContext("2d");
@@ -175,7 +135,3 @@ var chart = new Chart(myChart, {
 });
 
 </script>
-
-<%- ('footer') %>
-
-
