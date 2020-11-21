@@ -1,31 +1,39 @@
 
-<%- include('nav2')  %> 
+<%- include('nav2')  %>
 
+<table class="table table-hover table-dark">
+  <div class="container-fluid">
+    <div class="row welcome text-center">
+      <div class="col-12">
+        <h1 class="display-4">COVID UPDATES</h1>
+      </div>
+    </div>
+  </div>
+  <thead>
+    <tr>
+      <th scope="col">Country Name</th>
+      <th scope="col">Active</th>
+      <th scope="col">Recovered</th>
+      <th scope="col">Deceased</th>
+      <th scope="col">Confirmed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let i = 0; i < allData.length; i++) { %>
+    <tr>
+      <td><%= allData[i].Country %></td>
+      <td><%= allData[i].TotalConfirmed - allData[i].TotalRecovered %></td>
+      <td><%= allData[i].TotalRecovered %></td>
+      <td><%= allData[i].TotalDeaths %></td>
+      <td><%= allData[i].TotalConfirmed %></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
 
 
 <div class="container-fluid bg-light p-5 text-center my-3">
-  <h1 class="">Covid-19 Tracker India</h1>
-</div>
-
-<div class="container my-5">
-  <div class="row text-center">
-    <div class="col-3 text-warning">
-      <h5>Confirmed</h5>
-      <p id="confirmed"></p>
-    </div>
-    <div class="col-3 text-info">
-      <h5>Active</h5>
-      <p id="active"></p>
-    </div>
-    <div class="col-3 text-success">
-      <h5>Recovered</h5>
-      <p id="recovered"></p>
-    </div>
-    <div class="col-3 text-danger">
-      <h5>Deceased</h5>
-      <p id="deaths"></p>
-    </div>
-  </div>
+  <h1 class="">World Covid-19 Tracker</h1>
 </div>
 
 
@@ -35,12 +43,7 @@
 
 <canvas id="myChart"></canvas>
 
-<div class="container text-center my-5">
-  <h6 class="text-info">
-    *Click on the Confirmed/Recovered/Deaths buttons above to see the chart
-    individually.*
-  </h6>
-</div>
+
 
 <!-- JAVASCRIPT---------------------------------------------------------------- -->
 
@@ -52,18 +55,18 @@ $(document).ready(function () {
       var confirmed = [];
       var recovered = [];
       var deaths = [];
-  
+
      var active;
       var total_confirmed;
       var total_recovered;
       var total_deaths;
-  
+
       // Take the first element in statewise array and add the objects values into the above variables
       total_confirmed = data.Global.TotalConfirmed;
       total_recovered = data.Global.TotalRecovered;
       total_deaths = data.Global.TotalDeaths;
       active = (total_confirmed - total_recovered - total_deaths)
-  
+
       // The each loop select a single statewise array element
       // Take the data in that array and add it to variables
       $.each(data.Countries, function (id, obj) {
@@ -74,33 +77,33 @@ $(document).ready(function () {
       });
   // console.log(data);
       // Remove the first element in the states, confirmed, recovered, and deaths as that is the total value
-    
+
     //   states.shift();
-      
+
     //   confirmed.shift();
     //   recovered.shift();
     //   deaths.shift();
-  
+
       // console.log(states);
       // using jquery
       // $("#confirmed").append(total_confirmed);
       // $("#active").append(total_active);
       // $("#recovered").append(total_recovered);
       // $("#deaths").append(total_deaths);
-  
-      // using js
-      var aconfirmed = document.getElementById('confirmed');
-      aconfirmed.innerHTML = total_confirmed;
-  
-      var aactive = document.getElementById('active');
-      aactive.innerHTML = active;
-  
-      var adeaths = document.getElementById('deaths');
-      adeaths.innerHTML = total_deaths;
-  
-      var arecovered = document.getElementById('recovered');
-      arecovered.innerHTML = total_recovered;
-  
+
+      // // using js
+      // var aconfirmed = document.getElementById('confirmed');
+      // aconfirmed.innerHTML = total_confirmed;
+      //
+      // var aactive = document.getElementById('active');
+      // aactive.innerHTML = active;
+      //
+      // var adeaths = document.getElementById('deaths');
+      // adeaths.innerHTML = total_deaths;
+      //
+      // var arecovered = document.getElementById('recovered');
+      // arecovered.innerHTML = total_recovered;
+
       // Chart initialization
       var myChart = document.getElementById("myChart").getContext("2d");
       var chart = new Chart(myChart, {
@@ -132,10 +135,6 @@ $(document).ready(function () {
       });
     });
   });
-  
+
 
 </script>
-
-<%- ('footer') %>
-
-
