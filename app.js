@@ -68,8 +68,8 @@ app.use(express.static(__dirname + "/public"));
 
 
 app.get("/covidlive", (req, res) => {
-  const url = "https://api.covid19india.org/data.json";
-  request(url, (error, response, body) => {
+  const urls = "https://api.covid19india.org/data.json";
+  request(urls, (error, response, body) => {
 
     if (!error && response.statusCode == 200) {
       body = JSON.parse(body);
@@ -100,7 +100,7 @@ app.get("/covidlive", (req, res) => {
   });
 });
 
-app.get("countrylive", (req, res)=>{
+// app.get("countrylive", (req, res)=>{
     const url = "https://api.covid19api.com/summary";
     request(url, (error, response, body) => { 
         if (!error && response.statusCode == 200) { 
@@ -118,15 +118,15 @@ app.get("countrylive", (req, res)=>{
              })
               
             }
-            // console.table(body.Countries[7].Country);
-            // console.log(body.Countries[0].NewConfirmed);
-            // console.log(countryData)
-            res.render("countrylive", {
-              allData: body.Countries,
-            })
+            console.table(body.Countries[7].Country);
+            console.log(body.Countries[0].NewConfirmed);
+            console.log(countryData)
+            // res.render("countrylive", {
+            //   allData: body.Countries,
+            // })
         }
         })
-      });
+      // });
 
 
 
