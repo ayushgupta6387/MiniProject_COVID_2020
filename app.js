@@ -120,7 +120,7 @@ app.get("/countrylive", (req, res)=>{
             }
             // console.table(body.Countries[7].Country);
             // console.log(body.Countries[0].NewConfirmed);
-            console.log(countryData)
+            // console.log(countryData)
             res.render("countrylive", {
               allData: body.Countries,
             })
@@ -148,8 +148,8 @@ app.get('/history', (req, res) => {
 app.get('/covidintro', (req, res) => {
   res.render('covidintro')
 });
-app.get('/countrylive', (req, res) => {
-  res.render('countrylive')
+app.get('/chart', (req, res) => {
+  res.render('chart')
 });
 
 
