@@ -24,155 +24,35 @@
     </a>
   </div>
 
-  <hr class="my-4" />
-
 
 
 
   <div class="container-fluid bg-light p-5 text-center my-3">
-    <h1 class="">Covid-19 Tracker India</h1>
+    <h1 class="">World Covid Live Data</h1>
   </div>
-
-  <div class="containere my-5">
+  <div class="containere" style="margin-bottom: 40px;">
     <div class="row text-center">
       <div class="col-3 text-warning">
         <h5>Confirmed</h5>
-        <p id="confirmed"></p>
+        <p id="confirmed1"><%= allData.TotalConfirmed %></p>
       </div>
       <div class="col-3 text-info">
         <h5>Active</h5>
-        <p id="active"></p>
+        <p id="active1"><%= allData.TotalConfirmed - allData.TotalRecovered - allData.TotalDeaths %></p>
       </div>
       <div class="col-3 text-success">
         <h5>Recovered</h5>
-        <p id="recovered"></p>
+        <p id="recovered1"><%= allData.TotalRecovered %></p>
       </div>
       <div class="col-3 text-danger">
         <h5>Deceased</h5>
-        <p id="deaths"></p>
+        <p id="deaths1"><%= allData.TotalDeaths %></p>
       </div>
     </div>
   </div>
-  
-  <canvas id="myChart"></canvas>
-
-  <div class="containeerr text-center my-5">
-    <h6 class="text-info">
-      *Click on the Confirmed/Recovered/Deaths buttons above to see the chart
-      individually.*
-    </h6>
-  </div>
-  
-
-
-  <script>
-    $(document).ready(function () {
-    // Get JSON data from url
-    $.getJSON("https://api.covid19api.com/summary", function (data) {
-      var states = [];
-      var confirmed = [];
-      var recovered = [];
-      var deaths = [];
-  
-     var active;
-      var total_confirmed;
-      var total_recovered;
-      var total_deaths;
-  
-      // Take the first element in statewise array and add the objects values into the above variables
-      total_confirmed = data.Global.TotalConfirmed;
-      total_recovered = data.Global.TotalRecovered;
-      total_deaths = data.Global.TotalDeaths;
-      active = (total_confirmed - total_recovered - total_deaths)
-  
-      // The each loop select a single statewise array element
-      // Take the data in that array and add it to variables
-      $.each(data.Countries, function (id, obj) {
-        states.push(obj.Country);
-        confirmed.push(obj.TotalConfirmed);
-        recovered.push(obj.TotalRecovered);
-        deaths.push(obj.TotalDeaths);
-      });
-  // console.log(data);
-      // Remove the first element in the states, confirmed, recovered, and deaths as that is the total value
-    
-      states.shift();
-      
-      confirmed.shift();
-      recovered.shift();
-      deaths.shift();
-  
-      // console.log(states);
-      // using jquery
-      // $("#confirmed").append(total_confirmed);
-      // $("#active").append(total_active);
-      // $("#recovered").append(total_recovered);
-      // $("#deaths").append(total_deaths);
-  
-      // using js
-      var aconfirmed = document.getElementById('confirmed');
-      aconfirmed.innerHTML = total_confirmed;
-  
-      var aactive = document.getElementById('active');
-      aactive.innerHTML = active;
-  
-      var adeaths = document.getElementById('deaths');
-      adeaths.innerHTML = total_deaths;
-  
-      var arecovered = document.getElementById('recovered');
-      arecovered.innerHTML = total_recovered;
-  
-      // Chart initialization
-      var myChart = document.getElementById("myChart").getContext("2d");
-      var chart = new Chart(myChart, {
-        type: "pie",
-        data: {
-          labels: states,
-          datasets: [
-            {
-              label: "Confirmed Cases",
-              data: confirmed,
-              backgroundColor: "#f1c40f",
-              minBarLength: 100,
-            },
-            {
-              label: "Recovered",
-              data: recovered,
-              backgroundColor: "#2ecc71",
-              minBarLength: 100,
-            },
-            {
-              label: "Deceased",
-              data: deaths,
-              backgroundColor: "#e74c3c",
-              minBarLength: 100,
-            },
-          ],
-        },
-        option: {},
-      });
-    });
-  });
-  
-  </script>
-
-  
-  
-  
 
 
 
-
-
-
-
-
-
-
-
-
-
-  
   <!-- making two section -->
   <section id="two-column">
     <div class="container-fluid padding">
@@ -183,7 +63,7 @@
           <p>The economic impact of the 2020 coronavirus pandemic in India has been largely disruptive. India's growth in the fourth quarter of the fiscal year 2020 went down to 3.1% according to the Ministry of Statistics.
           </p>
           <p> The Chief Economic Adviser to the Government of India said that this drop is mainly due to the coronavirus pandemic effect on the Indian economy.</p>
-          
+
           <br />
           <a href="/gdp"><button class="btn btn-primary">Learn More</button></a>
         </div>
@@ -193,9 +73,9 @@
       </div>
     </div>
   </section>
-  
-  <hr class="my-4" />
-  
+
+
+
   <!--  -->
   <!-- Meet the team section -->
   <section id="meet-team">
@@ -208,7 +88,7 @@
         <hr />
       </div>
     </div>
-    
+
     <!-- Cards Section -->
     <div class="container-fluid padding">
       <div class="row padding">
@@ -251,11 +131,11 @@
       <br />
     </div>
   </section>
-  
-  <hr class="my-4" />
-  
+
+
+
   <!-- this is detailed section code -->
-  
+
   <section id="detailed">
     <div class="container-fluid cards">
       <div class="row welcome text-center">
@@ -265,13 +145,13 @@
         <hr />
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">WHAT IS COVID?</h5>
-      
+
             <a href="/covidintro" class="btn btn-primary">Go in Detail</a>
           </div>
         </div>
@@ -280,19 +160,19 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">HISTORY OF COVID...</h5>
-           
+
             <a href="/history" class="btn btn-primary">Go in Detail</a>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">LIVE STATUS...</h5>
-          
+
             <a href="/covidLive" class="btn btn-primary">Go in Detail</a>
           </div>
         </div>
@@ -301,18 +181,17 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">HELPLINE NUMBERS...</h5>
-         
+
             <a href="/coronvavirushelplinenumber.pdf" class="btn btn-primary">Go in Detail</a>
             <!-- <embed src="/coronvavirushelplinenumber.pdf"   height="700px" width="500"> -->
-              <!-- <iframe src="/coronvavirushelplinenumber.pdf" frameborder="0" height="100px"></iframe> -->
-            </div>
+            <!-- <iframe src="/coronvavirushelplinenumber.pdf" frameborder="0" height="100px"></iframe> -->
+          </div>
         </div>
       </div>
     </div>
   </section>
-  
-  <hr class="my-4" />
-  
+
+
   <!-- form -->
   <section id="suggestionForm">
     <div class="container-fluid">
@@ -339,6 +218,5 @@
   </section>
 
 
-  <hr class="my-4" />
   <%- include("footer") -%>
 </body>
