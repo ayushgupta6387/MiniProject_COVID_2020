@@ -69,7 +69,7 @@
     <div class="containere-fluid bg-light p-5 text-center">
         <h1 class="">Covid-19 Tracker World</h1>
     </div>
-    
+
     <div class="containere">
       <div class="row text-center">
         <div class="col-3 text-warning">
@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-    
+
     <canvas id="myChart2"></canvas>
 
     <script>
@@ -123,9 +123,9 @@
     });
 // console.log(data);
     // Remove the first element in the states, confirmed, recovered, and deaths as that is the total value
-  
+
     states.shift();
-    
+
     confirmed.shift();
     recovered.shift();
     deaths.shift();
@@ -192,18 +192,18 @@ $(document).ready(function () {
       var confirmed1 = [];
       var recovered1 = [];
       var deaths1= [];
-  
+
      var active1;
       var total_confirmed1;
       var total_recovered1;
       var total_deaths1;
-  
+
       // Take the first element in statewise array and add the objects values into the above variables
       total_confirmed1 = data.Global.TotalConfirmed;
       total_recovered1 = data.Global.TotalRecovered;
       total_deaths1 = data.Global.TotalDeaths;
       active1 = (total_confirmed1 - total_recovered1 - total_deaths1)
-  
+
       // The each loop select a single statewise array element
       // Take the data in that array and add it to variables
       $.each(data.Countries, function (id, obj) {
@@ -214,30 +214,30 @@ $(document).ready(function () {
       });
   // console.log(data);
       // Remove the first element in the states, confirmed, recovered, and deaths as that is the total value
-    
+
     //   states.shift();
-      
+
     //   confirmed.shift();
     //   recovered.shift();
     //   deaths.shift();
-  
+
       // console.log(states);
       // using jquery
       // $("#confirmed").append(total_confirmed);
       // $("#active").append(total_active);
       // $("#recovered").append(total_recovered);
       // $("#deaths").append(total_deaths);
-  
+
       // using js
       var aconfirmed1 = document.getElementById('confirmed1');
       aconfirmed1.innerHTML = total_confirmed1;
-  
+
       var aactive1 = document.getElementById('active1');
       aactive1.innerHTML = active1;
-  
+
       var adeaths1 = document.getElementById('deaths1');
       adeaths1.innerHTML = total_deaths1;
-  
+
       var arecovered1 = document.getElementById('recovered1');
       arecovered1.innerHTML = total_recovered1;
 
