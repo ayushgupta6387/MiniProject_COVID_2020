@@ -248,9 +248,9 @@ h4 {
 
 /* Two column */
 #two-column {
-  /* background-color: wheat; */
-  background-color: #70454e;
-  color: white;
+  background-color: #ffc85c;
+
+  color: #aa3a3a;
   padding: 5%;
 }
 
@@ -267,8 +267,8 @@ h4 {
 
 #meet-team {
   padding: 7%;
-    /* background-color: #004e7c; */
-  background-color: #5c5f58;
+    background-color: #8bcdcd;
+
 }
 #meet-team h1{
 color: white;
@@ -442,7 +442,7 @@ table {
 }
 
 .gdpcard .card-text {
-  padding: 5%;  
+  padding: 5%;
 }
 
 .gdpDiv h5{
@@ -727,4 +727,47 @@ margin-top: 15px;
 }
 .section-2 p:hover::after {
   width: 100%;
+}
+
+
+#first-section {
+  padding: 3%;
+  background-color: #eeeeee;
+}
+
+.border-value {
+  border: none;
+}
+
+#second-section {
+  padding: 3%;
+  background-color: #99a8b2;
+}
+
+
+#third-section {
+  padding: 3%;
+  background-color: #d2d3c9;
+}
+
+#fourth-section {
+  padding: 3%;
+  background-color: #eeeeee;
+}
+
+#fifth-section {
+  padding: 3%;
+  background-color: #fbf7f0;
+  color: #0f3057;
+}
+
+#fifth-section p, li {
+  font-size: 1.1rem;
+}
+
+#fifth-section li {
+  list-style-type: circle;
+}
+.homemadep {
+  padding: 2%;
 }
