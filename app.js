@@ -138,7 +138,16 @@ app.get('/gdp', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-  res.render('home')
+  const url = "https://api.covid19api.com/summary";
+  request(url, (error, response, body) => {
+      if (!error && response.statusCode == 200) {
+          body = JSON.parse(body);
+
+          res.render("home", {
+            allData: body.Global,
+          })
+      }
+      })
 });
 
 app.get('/history', (req, res) => {
