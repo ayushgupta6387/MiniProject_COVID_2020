@@ -100,33 +100,33 @@ app.get("/covidlive", (req, res) => {
   });
 });
 
-app.get("/countrylive", (req, res)=>{
-    const url = "https://api.covid19api.com/summary";
-    request(url, (error, response, body) => {
-        if (!error && response.statusCode == 200) {
-            body = JSON.parse(body);
-            // console.log(body);
-            // console.table(body.Global);
-            let countryData = [];
-            for (let i = 0; i < body.Countries.length; i++) {
-             countryData.push({
-               Country: body.Countries[i].Country,
-               Confirmed: body.Countries[i].TotalConfirmed,
-               Active: body.Countries[i].Active,
-               Deaths: body.Countries[i].TotalDeaths,
-               Recovered: body.Countries[i].TotalRecovered
-             })
-
-            }
-            // console.table(body.Countries[7].Country);
-            // console.log(body.Countries[0].NewConfirmed);
-            // console.log(countryData)
-            res.render("countrylive", {
-              allData: body.Countries,
-            })
-        }
+app.get("/countrylive", (req, res) => {
+  const url = "https://api.covid19api.com/summary";
+  request(url, (error, response, body) => {
+    if (!error && response.statusCode == 200) {
+      body = JSON.parse(body);
+      // console.log(body);
+      // console.table(body.Global);
+      let countryData = [];
+      for (let i = 0; i < body.Countries.length; i++) {
+        countryData.push({
+          Country: body.Countries[i].Country,
+          Confirmed: body.Countries[i].TotalConfirmed,
+          Active: body.Countries[i].Active,
+          Deaths: body.Countries[i].TotalDeaths,
+          Recovered: body.Countries[i].TotalRecovered
         })
-      });
+
+      }
+      // console.table(body.Countries[7].Country);
+      // console.log(body.Countries[0].NewConfirmed);
+      // console.log(countryData)
+      res.render("countrylive", {
+        allData: body.Countries,
+      })
+    }
+  })
+});
 
 
 
@@ -140,14 +140,14 @@ app.get('/gdp', (req, res) => {
 app.get('/home', (req, res) => {
   const url = "https://api.covid19api.com/summary";
   request(url, (error, response, body) => {
-      if (!error && response.statusCode == 200) {
-          body = JSON.parse(body);
+    if (!error && response.statusCode == 200) {
+      body = JSON.parse(body);
 
-          res.render("home", {
-            allData: body.Global,
-          })
-      }
+      res.render("home", {
+        allData: body.Global,
       })
+    }
+  })
 });
 
 app.get('/history', (req, res) => {
@@ -157,10 +157,14 @@ app.get('/history', (req, res) => {
 app.get('/covidintro', (req, res) => {
   res.render('covidintro')
 });
+
 app.get('/chart', (req, res) => {
   res.render('chart')
 });
 
+app.get('/about', (req, res) => {
+  res.render("about");
+});
 
 // using routes
 app.use("/", require("./routes/index"));
