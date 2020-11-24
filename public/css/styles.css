@@ -708,7 +708,9 @@ margin-top: 15px;
   padding: 20px;
 }
 
-
+.social a {
+  padding: 3rem;
+}
 
 .fa-facebook {
   color: #3b5998;
