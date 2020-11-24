@@ -707,9 +707,9 @@ margin-top: 15px;
   font-size: 3.5rem;
   padding: 20px;
 }
-a {
-  padding: 3rem;
-}
+
+
+
 .fa-facebook {
   color: #3b5998;
 }
@@ -763,7 +763,7 @@ hr.light {
     width: 20%;
     border-radius: 50%;
   }
-  
+
 
 #navigation img {
   width: 70px;
