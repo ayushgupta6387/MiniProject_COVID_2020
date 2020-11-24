@@ -248,9 +248,11 @@ h4 {
 
 /* Two column */
 #two-column {
-  background-color: #fff8c1;
+  /* background-color: #fff8c1; */
+  background-color: #3778c2;
 
-  color: #aa3a3a;
+  /* color: #aa3a3a; */
+  color: white;
   padding: 5%;
 }
 
@@ -271,7 +273,7 @@ h4 {
 
 }
 #meet-team h1{
-color: white;
+/* color: white; */
 }
 #meet-team .heros {
   padding-bottom: 3%;
@@ -344,7 +346,7 @@ color: white;
   /* background-color: red; */
 }
 .submitdirect{
-  font-size: 2.2vw;
+  font-size: 2vw;
   display: inline-block;
   margin-top: 60px;
   color: blue;
@@ -698,6 +700,31 @@ margin-top: 15px;
 }
 
 
+
+/* connect */
+/* connect section */
+.social {
+  font-size: 3.5rem;
+  padding: 20px;
+}
+a {
+  padding: 3rem;
+}
+.fa-facebook {
+  color: #3b5998;
+}
+
+.fa-envelope {
+  color: #d44638;
+}
+.fa-facebook:hover,
+.fa-git:hover,
+.fa-linkedin:hover,
+.fa-envelope:hover {
+  color: #d5d5d5;
+}
+
+
 /* line footer */
 .section-2 {
   display: flex;
@@ -710,6 +737,37 @@ margin-top: 15px;
   font-size: 20px;
   position: relative;
   color: #d5d5d5;
+}
+
+footer {
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+}
+hr.light {
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+  footer a {
+    color: #d5d5d5;
+  }
+  hr.light-100 {
+    border: 1px solid #d5d5d5;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .footerimage {
+    width: 20%;
+    border-radius: 50%;
+  }
+  
+
+#navigation img {
+  width: 70px;
+  border-radius: 50%;
 }
 
 /* to create horizontal line */
