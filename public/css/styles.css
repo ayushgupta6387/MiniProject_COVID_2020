@@ -721,9 +721,11 @@ margin-top: 15px;
 }
 .fa-facebook:hover,
 .fa-git:hover,
-.fa-linkedin:hover,
+.fa-linkedin:hover{
+  color: darkblue;
+}
 .fa-envelope:hover {
-  color: #d5d5d5;
+  color: darkred;
 }
 
 
