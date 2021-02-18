@@ -74,20 +74,20 @@ app.get("/covidlive", (req, res) => {
     if (!error && response.statusCode == 200) {
       body = JSON.parse(body);
 
-      let data = [];
-      for (let i = 0; i < body.statewise.length; i++) {
-        data.push({
-          State: body.statewise[i].state,
+      // let data = [];
+      // for (let i = 0; i < body.statewise.length; i++) {
+      //   data.push({
+      //     State: body.statewise[i].state,
 
-          Confirmed: body.statewise[i].confirmed,
+      //     Confirmed: body.statewise[i].confirmed,
 
-          Active: body.statewise[i].active,
+      //     Active: body.statewise[i].active,
 
-          Recovered: body.statewise[i].recovered,
+      //     Recovered: body.statewise[i].recovered,
 
-          Death: body.statewise[i].deaths,
-        });
-      }
+      //     Death: body.statewise[i].deaths,
+      //   });
+      // }
 
       console.log("-----Total Cases in India " + "and in each state-----");
       // console.log(data);
@@ -107,17 +107,17 @@ app.get("/countrylive", (req, res) => {
       body = JSON.parse(body);
       // console.log(body);
       // console.table(body.Global);
-      let countryData = [];
-      for (let i = 0; i < body.Countries.length; i++) {
-        countryData.push({
-          Country: body.Countries[i].Country,
-          Confirmed: body.Countries[i].TotalConfirmed,
-          Active: body.Countries[i].Active,
-          Deaths: body.Countries[i].TotalDeaths,
-          Recovered: body.Countries[i].TotalRecovered
-        })
+      // let countryData = [];
+      // for (let i = 0; i < body.Countries.length; i++) {
+      //   countryData.push({
+      //     Country: body.Countries[i].Country,
+      //     Confirmed: body.Countries[i].TotalConfirmed,
+      //     Active: body.Countries[i].Active,
+      //     Deaths: body.Countries[i].TotalDeaths,
+      //     Recovered: body.Countries[i].TotalRecovered
+      //   })
 
-      }
+      // }
       // console.table(body.Countries[7].Country);
       // console.log(body.Countries[0].NewConfirmed);
       // console.log(countryData)
