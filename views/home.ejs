@@ -31,26 +31,26 @@
     <h1 class="">COVID-19 CORONAVIRUS PANDEMIC</h1>
   </div>
   <div class="containere" style="margin-bottom: 40px;">
-    <div class="row text-center">
-      <div class="col-3 text-warning">
+    <div class="row text-center cases">
+      <div class="col-md-3 text-warning">
         <h5>Confirmed</h5>
         <p id="confirmed1"><%= allData.TotalConfirmed %></p>
       </div>
-      <div class="col-3 text-info">
+      <div class="col-md-3 text-info">
         <h5>Active</h5>
         <p id="active1"><%= allData.TotalConfirmed - allData.TotalRecovered - allData.TotalDeaths %></p>
       </div>
-      <div class="col-3 text-success">
+      <div class="col-md-3 text-success">
         <h5>Recovered</h5>
         <p id="recovered1"><%= allData.TotalRecovered %></p>
       </div>
-      <div class="col-3 text-danger">
+      <div class="col-md-3 text-danger">
         <h5>Deceased</h5>
         <p id="deaths1"><%= allData.TotalDeaths %></p>
       </div>
     </div>
     <div class="">
-      <h3 style="text-align: center; margin: 20px;"><a href="/chart">Click here to See Live pie chart Status for India and World</a></h3>
+      <h3 id="click" style="text-align: center; margin: 20px;"><a href="/chart">Click here to See Live pie chart Status for India and World</a></h3>
     </div>
   </div>
 
@@ -203,8 +203,8 @@
         <hr />
       </div>
     </div>
-    <div class="container-fluid padding">
-      <div class="row padding">
+    <div class="container-fluid padding suggest">
+      <div class="row padding suggestinner">
         <div class="col-md-4">
           <img src="images/suggest.png" class="suggestimg1" alt="" />
         </div>

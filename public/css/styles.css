@@ -213,16 +213,20 @@ h4 {
 }
 
 .caro {
-  height: 550px;
+  height: 40vw;
+  width: 60vw;
 }
 
 .carousel {
   margin-top: 10px;
+  /* margin: auto; */
+  /* width: 1100px; */
 }
 
 /* navigation */
 #navigation {
   background-color: #394867;
+  /* width: 1100px; */
 }
 
 #navigation .navbar {
@@ -324,6 +328,8 @@ h4 {
   background-color: #3aafa9;
   padding: 5%;
 }
+
+
 /*
 #suggestionForm .submitText {
   padding-bottom: 10px;
@@ -340,9 +346,10 @@ h4 {
 } */
 .suggestimg1{
   /* background-color: red; */
+  width: 55%;
 }
 .suggestimg2{
-  width: 65%;
+  width: 55%;
   /* background-color: red; */
 }
 .submitdirect{
@@ -836,4 +843,42 @@ hr.light {
 
 .new {
   align-items: center;
+}
+
+
+
+/* world cases */
+.cases{
+  /* display: flex; */
+  /* justify-content: center; */
+  /* background-color: red; */
+  width: 100%;
+  /* flex-wrap: wrap; */
+}
+
+.middle a{
+font-size: 3vw;
+text-align: center;
+}
+
+
+@media (max-width: 768px){
+  .suggest{
+    text-align: center;
+
+  }
+ .middle a{
+font-size: 25px;
+margin-bottom: 20px;
+text-align: center;
+} 
+}
+
+@media (max-width: 1101px){
+  .middle a {
+    margin-top: 20px;
+  }
+  #click{
+    display: none;
+  }
 }
